@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/11/01/softbank-son-president/</loc>
+    
+    <lastmod>2016-12-03T14:23:37.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/09/18/svg-circle-animation/</loc>
     
     <lastmod>2016-12-03T14:16:21.000Z</lastmod>
@@ -40,13 +47,6 @@
     <loc>http://yoursite.com/2016/10/29/cakephp3-browser-sync-live-reload/</loc>
     
     <lastmod>2016-12-03T14:13:16.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2016/11/01/softbank-son-president/</loc>
-    
-    <lastmod>2016-12-03T14:12:04.000Z</lastmod>
     
   </url>
   
