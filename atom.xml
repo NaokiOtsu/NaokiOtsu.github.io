@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-03T12:07:35.000Z</updated>
+  <updated>2016-12-03T12:15:09.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>あるボタンを押した時のアニメーション効果を連打しても確実に付けさせたい</title>
+    <link href="http://yoursite.com/2016/09/03/button-click-animation/"/>
+    <id>http://yoursite.com/2016/09/03/button-click-animation/</id>
+    <published>2016-09-03T12:05:17.000Z</published>
+    <updated>2016-12-03T12:15:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>あるボタンを押した時に、<br>ぽよんと反応するようなアニメーション効果を与えたい。<br>その要素を押したら、例えば <code>.click-animation</code>のような、ぽよんとするCSSアニメーションを付けたクラスを、付与させる事が多いが、そんな時の実装MEMO。  </p>
+<p>要素を押した時に、<code>.click-animation</code>が既に付与されていたら、削除してから付与しないとアニメーションしなく、また削除して即付与してもアニメーションしないので、<code>setTimeout()</code>などで適当な一定時間待って付与する事が多かった。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(target).removeClass(<span class="string">'click-animation'</span>);</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(target).addClass(<span class="string">'click-animation'</span>);</div><div class="line">&#125;, <span class="number">10</span>);</div></pre></td></tr></table></figure>
+<p>もしくは、<code>webkitAnimationEnd</code>などを使って、アニメーション後にクラス削除などしていた。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(target).addClass(<span class="string">'click-animation'</span>);</div><div class="line">$(target).on(<span class="string">'webkitAnimationEnd'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(target).removeClass(<span class="string">'click-animation'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>ただこれだと連打した場合に反応してくれない場合がある。<br>結論、<code>requestAnimationFrame</code>を使うと良さそう。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(target).removeClass(<span class="string">'click-animation'</span>);</div><div class="line">requestAnimationFrame(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(target).addClass(<span class="string">'click-animation'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>これだと高橋名人ばりに連打した場合も確実にアニメーション効果を与える事ができた。<br>ブラウザの次のレンダリングフレームを待ってクラス付与してるから確実ということだろうか。</p>
+<p>Google I/O 2016の<a href="https://github.com/GoogleChrome/ui-element-samples/blob/gh-pages/swipeable-cards/cards.js#L166-L175" target="_blank" rel="external">実装サンプル</a>とかでも、<code>requestAnimationFrame</code>を使った要素の付与や削除をやってるようだった。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;あるボタンを押した時に、&lt;br&gt;ぽよんと反応するようなアニメーション効果を与えたい。&lt;br&gt;その要素を押したら、例えば &lt;code&gt;.click-animation&lt;/code&gt;のような、ぽよんとするCSSアニメーションを付けたクラスを、付与させる事が多いが、そんな時の実装
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>あるボタンを押した時のアニメーション効果を連打しても確実に付けさせたい</title>
