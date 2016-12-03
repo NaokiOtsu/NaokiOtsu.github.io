@@ -110,7 +110,7 @@
     <link href="http://yoursite.com/2016/11/01/softbank-son-president/"/>
     <id>http://yoursite.com/2016/11/01/softbank-son-president/</id>
     <published>2016-11-01T12:46:03.000Z</published>
-    <updated>2016-12-03T21:04:00.000Z</updated>
+    <updated>2016-12-03T21:05:24.000Z</updated>
     
     <content type="html"><![CDATA[<iframe width="560" height="315" src="https://www.youtube.com/embed/zhrz8KdUB4w" frameborder="0" allowfullscreen></iframe>
 
@@ -131,6 +131,8 @@
     
       <category term="プライベート" scheme="http://yoursite.com/categories/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88/"/>
     
+    
+      <category term="プライベート" scheme="http://yoursite.com/tags/%E3%83%97%E3%83%A9%E3%82%A4%E3%83%99%E3%83%BC%E3%83%88/"/>
     
   </entry>
   
