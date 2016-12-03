@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-12-03T12:49:27.000Z</updated>
+  <updated>2016-12-03T13:27:00.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -20,32 +20,12 @@
     <link href="http://yoursite.com/2016/11/28/local-php-browser-sync/"/>
     <id>http://yoursite.com/2016/11/28/local-php-browser-sync/</id>
     <published>2016-11-28T12:49:03.000Z</published>
-    <updated>2016-12-03T12:49:27.000Z</updated>
+    <updated>2016-12-03T13:27:00.000Z</updated>
     
     <content type="html"><![CDATA[<p>MacのローカルにPHP環境構築して、<a href="https://www.browsersync.io/" target="_blank">BrowserSync</a>でLiveReloadさせた時のMEMO。</p>
 <p>調べた結果、<a href="https://www.npmjs.com/package/gulp-connect-php" target="_blank">gulp-connect-php</a>を使うのが早そうだった。</p>
-<pre><code class="shell">$ yarn init -y
-$ yarn add -D gulp gulp-connect-php browser-sync
-</code></pre>
-
-<p><strong>gulpfile.js</strong></p>
-<pre><code class="js">var gulp        = require('gulp');
-var connect     = require('gulp-connect-php');
-var browserSync = require('browser-sync').create();
-
-gulp.task('connect-sync', function() {
-  connect.server({}, function() {
-    browserSync.init({
-      proxy: '127.0.0.1:8000'
-    });
-  });
-
-  gulp.watch(['./*.php', './*.css', './*.js']).on('change', browserSync.reload);
-});
-
-gulp.task('default', ['connect-sync']);
-</code></pre>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ yarn init -y</div><div class="line">$ yarn add -D gulp gulp-connect-php browser-sync</div></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>gulpfile.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> gulp        = <span class="built_in">require</span>(<span class="string">'gulp'</span>);</div><div class="line"><span class="keyword">var</span> connect     = <span class="built_in">require</span>(<span class="string">'gulp-connect-php'</span>);</div><div class="line"><span class="keyword">var</span> browserSync = <span class="built_in">require</span>(<span class="string">'browser-sync'</span>).create();</div><div class="line"></div><div class="line">gulp.task(<span class="string">'connect-sync'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  connect.server(&#123;&#125;, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    browserSync.init(&#123;</div><div class="line">      <span class="attr">proxy</span>: <span class="string">'127.0.0.1:8000'</span></div><div class="line">    &#125;);</div><div class="line">  &#125;);</div><div class="line"></div><div class="line">  gulp.watch([<span class="string">'./*.php'</span>, <span class="string">'./*.css'</span>, <span class="string">'./*.js'</span>]).on(<span class="string">'change'</span>, browserSync.reload);</div><div class="line">&#125;);</div><div class="line"></div><div class="line">gulp.task(<span class="string">'default'</span>, [<span class="string">'connect-sync'</span>]);</div></pre></td></tr></table></figure>
 <p>これで <code>gulp</code> を叩いたら無事に構築出来ました。</p>
 ]]></content>
     
@@ -60,14 +40,14 @@ gulp.task('default', ['connect-sync']);
   </entry>
   
   <entry>
-    <title>Youtubeの再生リストの動画を一覧表示する &amp;#124; Youtube Data API v3</title>
+    <title>Youtubeの再生リストの動画を一覧表示する | Youtube Data API v3</title>
     <link href="http://yoursite.com/2016/11/13/youtube-play-list-youtube-data-api-v3/"/>
     <id>http://yoursite.com/2016/11/13/youtube-play-list-youtube-data-api-v3/</id>
     <published>2016-11-13T12:48:04.000Z</published>
-    <updated>2016-12-03T12:48:33.000Z</updated>
+    <updated>2016-12-03T13:32:20.000Z</updated>
     
-    <content type="html"><![CDATA[<p>自分のプライベートなプロダクトで、<br>Youtubeの再生リストの動画を一覧表示する機能が入れる必要があって、<br><a href="https://developers.google.com/youtube/v3/getting-started?hl=ja" target="_blank">Youtube Data API v3 のガイド</a>を見ながらやっていたが、<br>若干の分かり辛さがあって、スムーズに行かなかったので結論の実装方法をメモしておくことに。</p>
-<h2><strong>【結論】</strong></h2>
+    <content type="html"><![CDATA[<p>自分のプライベートなプロダクトで、<br>Youtubeの再生リストの動画を一覧表示する機能が入れる必要があって、<br><a href="https://developers.google.com/youtube/v3/getting-started?hl=ja" target="_blank">Youtube Data API v3 のガイド</a>を見ながらやっていたが、<br>スムーズに行かなかったので結論の実装方法をメモしておくことに。</p>
+<h2><strong>実装方法</strong></h2>
 
 <p>下記の4ステップを踏むと良かった。</p>
 <h3><strong>1. APIキーを取得する</strong></h3>
@@ -76,44 +56,20 @@ gulp.task('default', ['connect-sync']);
 <h3><strong>2. 表示したい動画のリクエストURLを<a href="https://developers.google.com/youtube/v3/docs/?hl=ja" target="_blank">リファレンス</a>から調べる</strong></h3>
 
 <p>自分の場合は、再生リストの一覧が欲しかったので、<a href="https://developers.google.com/youtube/v3/docs/playlistItems/list?hl=ja" target="_blank">こちら</a>のリクエストURLが必要だった。</p>
-<pre><code class="php">GET https://www.googleapis.com/youtube/v3/playlistItems
-</code></pre>
-
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">GET https:<span class="comment">//www.googleapis.com/youtube/v3/playlistItems</span></div></pre></td></tr></table></figure>
 <p>GET形式で、このURLにリクエストをすれば良いようだ。</p>
 <h3><strong>3. 再生リストのIDを調べる</strong></h3>
 
 <p>再生リストを表示したい場合は、再生リストIDというのが必要なようだった。<br>チャンネルIDとかも必要なのかなと思っていたが、それは必要なかった。</p>
 <p>再生リストIDは、例えば<br><a href="https://www.youtube.com/playlist?list=PLlVlyGVtvuVnAx-u38QOieyVIrMEmzuDx" target="_blank">https://www.youtube.com/playlist?list=PLlVlyGVtvuVnAx-u38QOieyVIrMEmzuDx</a><br>の再生リストのIDは、</p>
-<pre><code>PLlVlyGVtvuVnAx-u38QOieyVIrMEmzuDx
-</code></pre>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">PLlVlyGVtvuVnAx-u38QOieyVIrMEmzuDx</div></pre></td></tr></table></figure>
 <p>のように、URLの最後の部分になるようだ。</p>
 <h3><strong>4. Ajaxでリクエストを投げてレスポンスを表示する</strong></h3>
 
 <p>Youtube Data API v3のガイドだと、リクエストURLに <code>?part=</code> とかを付けて、受け取ってねとあったが、<br>jQueryとかだと、下記のようにリクエストを投げても、無事に欲しいレスポンスが返ってくるので、自分はこっちで実装した。</p>
-<pre><code class="js">$.ajax({
-  type: 'get',
-  url: 'https://www.googleapis.com/youtube/v3/playlistItems', // リクエストURL
-  dataType: 'json',
-  data: {
-    part: 'snippet', // partは必須で指定が必要とのこと。レスポンスで返してもらいたいデータをカンマ区切りで指定する。snippetがあればとりあえず動画を再生するレスポンスが受け取れる。
-    playlistId: 'PLlVlyGVtvuVnAx-u38QOieyVIrMEmzuDx', // 再生リストID
-    maxResults: 20, // デフォルトは5件までしか受け取らないので、取得件数を変更
-    key: '{APIキー}'
-  }
-}).done(function(response) {
-  // 成功
-}).fail(function() {
-  // エラー
-});
-</code></pre>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">  <span class="attr">type</span>: <span class="string">'get'</span>,</div><div class="line">  <span class="attr">url</span>: <span class="string">'https://www.googleapis.com/youtube/v3/playlistItems'</span>, <span class="comment">// リクエストURL</span></div><div class="line">  dataType: <span class="string">'json'</span>,</div><div class="line">  <span class="attr">data</span>: &#123;</div><div class="line">    <span class="attr">part</span>: <span class="string">'snippet'</span>, <span class="comment">// partは必須で指定が必要とのこと。レスポンスで返してもらいたいデータをカンマ区切りで指定する。snippetがあればとりあえず動画を再生するレスポンスが受け取れる。</span></div><div class="line">    playlistId: <span class="string">'PLlVlyGVtvuVnAx-u38QOieyVIrMEmzuDx'</span>, <span class="comment">// 再生リストID</span></div><div class="line">    maxResults: <span class="number">20</span>, <span class="comment">// デフォルトは5件までしか受け取らないので、取得件数を変更</span></div><div class="line">    key: <span class="string">'&#123;APIキー&#125;'</span></div><div class="line">  &#125;</div><div class="line">&#125;).done(<span class="function"><span class="keyword">function</span>(<span class="params">response</span>) </span>&#123;</div><div class="line">  <span class="comment">// 成功</span></div><div class="line">&#125;).fail(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="comment">// エラー</span></div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p>これで入力項目が問題なければ、成功するので、<br>あとは、返ってきた <code>response</code> から動画を表示させれば良い。</p>
-<pre><code class="js">response.items.forEach(function(item) {
-    var id = item.snippet.resourceId.videoId;
-    $('#list').append('&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/'+ id +'" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;');
-});
-</code></pre>]]></content>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">response.items.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> id = item.snippet.resourceId.videoId;</div><div class="line">    $(<span class="string">'#list'</span>).append(<span class="string">'&amp;lt;iframe width="560" height="315" src="https://www.youtube.com/embed/'</span>+ id +<span class="string">'" frameborder="0" allowfullscreen&amp;gt;&amp;lt;/iframe&amp;gt;'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -129,22 +85,13 @@ gulp.task('default', ['connect-sync']);
     <link href="http://yoursite.com/2016/11/11/font-awesome-error/"/>
     <id>http://yoursite.com/2016/11/11/font-awesome-error/</id>
     <published>2016-11-11T12:46:57.000Z</published>
-    <updated>2016-12-03T12:47:25.000Z</updated>
+    <updated>2016-12-03T13:34:07.000Z</updated>
     
     <content type="html"><![CDATA[<p><a href="http://fontawesome.io/" target="_blank">Font Awesome</a>を使っていて、本番サイトで確認しようとしたら、<br>フォントが正しく出ていない… ローカルでは大丈夫だったのに..</p>
 <p>そして、コンソールを見たら、<br><strong>「Failed to decode downloaded font」</strong><br>とか<br><strong>「OTS parsing error: incorrect file size in WOFF header」</strong><br>とか出ている様子。</p>
-<p><strong>【原因】</strong><br>調べてみると、gitの改行コードを変換する仕組みによって起きてる模様だった。<br>参考: <a href="http://ts0818.hatenablog.com/entry/2016/04/01/225341" target="_blank">『Failed to decode downloaded font』から始まるエラー</a></p>
-<p><strong>【対策】</strong><br>gitのルートディレクトリにある、「.gitattributes」ファイルを開いて、<br>変換しないように下記を追加してあげると問題なかった。</p>
-<pre><code># Denote all files that are truly binary and should not be modified.
-... 中略
-*.otf binary
-*.eot binary
-*.svg binary
-*.ttf binary
-*.woff binary
-*.woff2 binary
-</code></pre>
-
+<h2 id="原因"><a href="#原因" class="headerlink" title="原因"></a>原因</h2><p>調べてみると、gitの改行コードを変換する仕組みによって起きてる模様だった。<br>参考: <a href="http://ts0818.hatenablog.com/entry/2016/04/01/225341" target="_blank">『Failed to decode downloaded font』から始まるエラー</a></p>
+<h2 id="対策"><a href="#対策" class="headerlink" title="対策"></a>対策</h2><p>gitのルートディレクトリにある、「.gitattributes」ファイルを開いて、<br>変換しないように下記を追加してあげると問題なかった。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"># Denote all files that are truly binary and should not be modified.</div><div class="line">... 中略</div><div class="line">*.otf binary</div><div class="line">*.eot binary</div><div class="line">*.svg binary</div><div class="line">*.ttf binary</div><div class="line">*.woff binary</div><div class="line">*.woff2 binary</div></pre></td></tr></table></figure>
 <p>もう一度、正しいフォントを格納して、git pushして確認したところ無事解決でした。</p>
 ]]></content>
     
@@ -163,9 +110,10 @@ gulp.task('default', ['connect-sync']);
     <link href="http://yoursite.com/2016/11/01/softbank-son-president/"/>
     <id>http://yoursite.com/2016/11/01/softbank-son-president/</id>
     <published>2016-11-01T12:46:03.000Z</published>
-    <updated>2016-12-03T12:46:31.000Z</updated>
+    <updated>2016-12-03T13:39:44.000Z</updated>
     
-    <content type="html"><![CDATA[<p>[[embed]<a href="https://www.youtube.com/watch?v=zhrz8KdUB4w[/embed" target="_blank" rel="external">https://www.youtube.com/watch?v=zhrz8KdUB4w[/embed</a>]</p>
+    <content type="html"><![CDATA[<iframe width="560" height="315" src="https://www.youtube.com/embed/zhrz8KdUB4w" frameborder="0" allowfullscreen></iframe>
+
 <p>孫社長はずっと前から尊敬している事業家のお一人で、<br>東京ビックサイトで行われたソフトバンクBBの入社式で、豆粒ぐらいとても遠くでお話されていたのにすごく感動したのを思い出す。</p>
 <p>本や雑誌でも様々なことを学ばせて頂いてるけども、<br>この動画でおっしゃってる事や考えが原点にあるような気がしていて、これまでにも何度も見た。</p>
 <p>お金とか地位とか名誉とかそんなことじゃなく、自分がやりたいと思った事を貫くかっこよさ。<br>自分が死ぬ前に、あ〜無難に生きたな、出世できたなとかそんな小さな事じゃなく、<br>心からやりたい事を本気でやったなと思って死にたい。<br>そんな想いをこの動画から感じる。</p>
@@ -175,7 +123,9 @@ gulp.task('default', ['connect-sync']);
     
     <summary type="html">
     
-      &lt;p&gt;[[embed]&lt;a href=&quot;https://www.youtube.com/watch?v=zhrz8KdUB4w[/embed&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.youtube.com/watch?v=zhrz8
+      &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/zhrz8KdUB4w&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;孫社長はずっと前から尊敬し
     
     </summary>
     
@@ -187,26 +137,17 @@ gulp.task('default', ['connect-sync']);
     <link href="http://yoursite.com/2016/10/29/cakephp3-browser-sync-live-reload/"/>
     <id>http://yoursite.com/2016/10/29/cakephp3-browser-sync-live-reload/</id>
     <published>2016-10-29T12:45:10.000Z</published>
-    <updated>2016-12-03T12:45:39.000Z</updated>
+    <updated>2016-12-03T13:41:20.000Z</updated>
     
     <content type="html"><![CDATA[<p>[CakePHP3でWebアプリの開発をしていたが、<br>BrowserSyncを使ってLiveReloadさせて効率よく開発していきたい。そんな時のMEMO。</p>
 <p>CakePHPでは</p>
-<pre><code>bin/cake server
-</code></pre>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/cake server</div></pre></td></tr></table></figure>
 <p>で、デフォルトは、 <code>localhost:8765</code> のサーバーが立ち上がるが、</p>
 <p>まずはこれを、</p>
-<pre><code>bin/cake server -H {IPアドレス} -p 8765
-</code></pre>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">bin/cake server -H &#123;IPアドレス&#125; -p 8765</div></pre></td></tr></table></figure>
 <p>で起動させて、 {IPアドレス}:8765 で立ち上げておく。</p>
 <p>そしてBrowserSync側では、optionsのproxyとportを設定すれば良さそう。</p>
-<pre><code>{
-    proxy: "{IPアドレス}:8765",
-    port: 4000
-}
-</code></pre>
-
+<figure class="highlight js"><figcaption><span>gulpfile.js</span></figcaption><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    <span class="attr">proxy</span>: <span class="string">"&#123;IPアドレス&#125;:8765"</span>,</div><div class="line">    <span class="attr">port</span>: <span class="number">4000</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>これでBrowserSyncをstartさせたら、<br><a href="http://{IPアドレス}:4000/" target="_blank" rel="external">http://{IPアドレス}:4000/</a> もしくは <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> へのアクセスで問題なくLiveReload出来た。</p>
 ]]></content>
     
@@ -214,8 +155,7 @@ gulp.task('default', ['connect-sync']);
     
       &lt;p&gt;[CakePHP3でWebアプリの開発をしていたが、&lt;br&gt;BrowserSyncを使ってLiveReloadさせて効率よく開発していきたい。そんな時のMEMO。&lt;/p&gt;
 &lt;p&gt;CakePHPでは&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;bin/cake server
-&lt;/code&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;t
     
     </summary>
     
@@ -250,24 +190,17 @@ gulp.task('default', ['connect-sync']);
     <link href="http://yoursite.com/2016/09/24/javascript-replace-child-clone-node/"/>
     <id>http://yoursite.com/2016/09/24/javascript-replace-child-clone-node/</id>
     <published>2016-09-24T12:42:55.000Z</published>
-    <updated>2016-12-03T12:43:42.000Z</updated>
+    <updated>2016-12-03T13:42:34.000Z</updated>
     
     <content type="html"><![CDATA[<p>[ピュア(Vanilla)なJavaScriptでの要素の入れ替えのMEMO。<br>例えばAとBの要素を入れ替えたい時など。</p>
-<pre><code class="js">var clone_A = element_A.cloneNode(true);
-var clone_B = element_B.cloneNode(true);
-
-element_A.parentNode.replaceChild(clone_A, element_B);
-element_B.parentNode.replaceChild(clone_B, element_A);
-</code></pre>
-
-<p>cloneNodeで要素のクローンを作った後に、replaceChildで置換する。<br>cloneNodeの引数は、nodeの子孫ノードも複製する場合はtrue 、 nodeのみを複製する場合はfalseとなる。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> clone_A = element_A.cloneNode(<span class="literal">true</span>);</div><div class="line"><span class="keyword">var</span> clone_B = element_B.cloneNode(<span class="literal">true</span>);</div><div class="line"></div><div class="line">element_A.parentNode.replaceChild(clone_A, element_B);</div><div class="line">element_B.parentNode.replaceChild(clone_B, element_A);</div></pre></td></tr></table></figure>
+<p>cloneNodeで要素のクローンを作った後に、replaceChildで置換する。<br>cloneNodeの引数は、nodeの子孫ノードも複製する場合はtrue<br>nodeのみを複製する場合はfalseとなる。</p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;[ピュア(Vanilla)なJavaScriptでの要素の入れ替えのMEMO。&lt;br&gt;例えばAとBの要素を入れ替えたい時など。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;var clone_A = element_A.cloneNode(true);
-var cl
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div 
     
     </summary>
     
@@ -279,17 +212,10 @@ var cl
     <link href="http://yoursite.com/2016/09/22/javascript-array-shuffle/"/>
     <id>http://yoursite.com/2016/09/22/javascript-array-shuffle/</id>
     <published>2016-09-22T12:41:44.000Z</published>
-    <updated>2016-12-03T12:42:20.000Z</updated>
+    <updated>2016-12-03T13:42:57.000Z</updated>
     
     <content type="html"><![CDATA[<p>[ピュア(Vanilla)なJavaScriptでの配列のシャッフル。</p>
-<pre><code>var targets = [1,2,3,4,5];
-var results = [];
-while (targets.length) {
-    results.push(targets.splice(Math.floor(Math.random() * targets.length), 1)[0]);
-}
-console.log(results); // 例: [5, 1, 4, 3, 2]
-</code></pre>
-
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> targets = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"><span class="keyword">var</span> results = [];</div><div class="line"><span class="keyword">while</span> (targets.length) &#123;</div><div class="line">    results.push(targets.splice(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * targets.length), <span class="number">1</span>)[<span class="number">0</span>]);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(results); <span class="comment">// 例: [5, 1, 4, 3, 2]</span></div></pre></td></tr></table></figure>
 <p>※ただこのやり方だと全く同じ配列が返されてしまう場合もある。<br>間違いなくシャッフルさせなければいけない時の記述はもう少し複雑になるが、下記を参照。</p>
 <p><a href="https://h2ham.net/javascript-%E3%81%A7%E9%85%8D%E5%88%97%E3%81%AE%E3%82%B7%E3%83%A3%E3%83%83%E3%83%95%E3%83%AB" target="_blank" rel="external">JavaScriptで配列のシャッフル</a></p>
 ]]></content>
@@ -297,10 +223,7 @@ console.log(results); // 例: [5, 1, 4, 3, 2]
     <summary type="html">
     
       &lt;p&gt;[ピュア(Vanilla)なJavaScriptでの配列のシャッフル。&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;var targets = [1,2,3,4,5];
-var results = [];
-while (targets.length) {
-    results.push
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div cla
     
     </summary>
     
@@ -312,23 +235,15 @@ while (targets.length) {
     <link href="http://yoursite.com/2016/09/22/javascript-pare-array-create/"/>
     <id>http://yoursite.com/2016/09/22/javascript-pare-array-create/</id>
     <published>2016-09-22T12:39:34.000Z</published>
-    <updated>2016-12-03T12:41:00.000Z</updated>
+    <updated>2016-12-03T13:43:23.000Z</updated>
     
     <content type="html"><![CDATA[<p>[神経衰弱を作る時のような、[1, 1, 2, 2]のようなペアな値を持った配列が欲しい時の実装MEMO。</p>
-<pre><code class="js">var cards = [];
-for (var i = 1; i &lt;= 2; i++) {
-    cards[cards.length] = i;
-    cards[cards.length] = i;
-}
-console.log(cards); // [1, 1, 2, 2]
-</code></pre>]]></content>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cards = [];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &amp;lt;= <span class="number">2</span>; i++) &#123;</div><div class="line">    cards[cards.length] = i;</div><div class="line">    cards[cards.length] = i;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(cards); <span class="comment">// [1, 1, 2, 2]</span></div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;[神経衰弱を作る時のような、[1, 1, 2, 2]のようなペアな値を持った配列が欲しい時の実装MEMO。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;var cards = [];
-for (var i = 1; i &amp;lt;= 2; i++) {
-    car
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;lin
     
     </summary>
     
@@ -340,24 +255,15 @@ for (var i = 1; i &amp;lt;= 2; i++) {
     <link href="http://yoursite.com/2016/09/22/javascript-addeventlistener-param-removeeventlistener/"/>
     <id>http://yoursite.com/2016/09/22/javascript-addeventlistener-param-removeeventlistener/</id>
     <published>2016-09-22T12:38:36.000Z</published>
-    <updated>2016-12-03T12:40:02.000Z</updated>
+    <updated>2016-12-03T13:43:43.000Z</updated>
     
-    <content type="html"><![CDATA[<p>[全然スマートじゃないからもっと良い方法ありそうだけど、一応備忘録。</p>
-<pre><code class="js">element.addEventListener('click', function onClick() {
-    onClickHandler(onClick, '渡したい引数');
-});
-
-function onClickHandler(func, text) {
-    console.log(text); // 渡したい引数
-    element.removeEventListener('click', func);
-}
-</code></pre>]]></content>
+    <content type="html"><![CDATA[<p>全然スマートじゃないからもっと良い方法ありそうだけど、一応備忘録。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">element.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="title">onClick</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    onClickHandler(onClick, <span class="string">'渡したい引数'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">onClickHandler</span>(<span class="params">func, text</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(text); <span class="comment">// 渡したい引数</span></div><div class="line">    element.removeEventListener(<span class="string">'click'</span>, func);</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;[全然スマートじゃないからもっと良い方法ありそうだけど、一応備忘録。&lt;/p&gt;
-&lt;pre&gt;&lt;code class=&quot;js&quot;&gt;element.addEventListener(&#39;click&#39;, function onClick() {
-    onClickHandler(on
+      &lt;p&gt;全然スマートじゃないからもっと良い方法ありそうだけど、一応備忘録。&lt;/p&gt;
+&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class
     
     </summary>
     
@@ -369,34 +275,17 @@ function onClickHandler(func, text) {
     <link href="http://yoursite.com/2016/09/18/no-change-button-design-click-scale/"/>
     <id>http://yoursite.com/2016/09/18/no-change-button-design-click-scale/</id>
     <published>2016-09-18T12:37:05.000Z</published>
-    <updated>2016-12-03T12:37:54.000Z</updated>
+    <updated>2016-12-03T13:44:38.000Z</updated>
     
     <content type="html"><![CDATA[<p>「<a href="https://www.amazon.co.jp/CSS%E3%82%B7%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88-%E2%80%9547%E3%81%AE%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E3%81%A7CSS%E3%82%92%E8%87%AA%E5%9C%A8%E3%81%AB%E6%93%8D%E3%82%8B-Lea-Verou/dp/4873117666/ref=sr_1_1?ie=UTF8&amp;qid=1474188594&amp;sr=8-1&amp;keywords=CSS%E3%82%B7%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88" target="_blank" rel="external">CSSシークレット</a>」で書かれていた備忘録だが、<br>ボタンのデザインは変えたくない、でもクリックできる領域を広げたい時のTips。</p>
 <p>結論、擬似要素を使って下記のように実装する。</p>
-<pre><code class="css">.target {
-    position: relative;
-}
-.target:before {
-    content: '';
-    position: absolute;
-    top: -15px; bottom: -15px; right: -15px; left: -15px;
-}
-</code></pre>
-
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.target</span> &#123;</div><div class="line">    <span class="attribute">position</span>: relative;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.target</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">    <span class="attribute">position</span>: absolute;</div><div class="line">    <span class="attribute">top</span>: -<span class="number">15px</span>; <span class="attribute">bottom</span>: -<span class="number">15px</span>; <span class="attribute">right</span>: -<span class="number">15px</span>; <span class="attribute">left</span>: -<span class="number">15px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>上記の場合、ボタンの周りに15pxクリック領域が出来る。</p>
 <p>もしくは、擬似要素を既に使っている時は、ボーダーを使ったやり方もある。</p>
-<pre><code class="css">.target {
-    border: 15px solid transparent;
-}
-</code></pre>
-
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.target</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">15px</span> solid transparent;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>この場合、ボタン領域に15pxの透明なボーダーが出来て領域が広がる。</p>
 <p>もしこれでボタンの背景が広がってしまう場合は、background-clip: padding-box;を指定することで回避することもできる。</p>
-<pre><code class="css">.target {
-    border: 15px solid transparent;
-    background-clip: padding-box;
-}
-</code></pre>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.target</span> &#123;</div><div class="line">    <span class="attribute">border</span>: <span class="number">15px</span> solid transparent;</div><div class="line">    <span class="attribute">background-clip</span>: padding-box;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 ]]></content>
     
     <summary type="html">
@@ -413,46 +302,21 @@ function onClickHandler(func, text) {
     <link href="http://yoursite.com/2016/09/18/svg-circle-animation/"/>
     <id>http://yoursite.com/2016/09/18/svg-circle-animation/</id>
     <published>2016-09-18T12:35:38.000Z</published>
-    <updated>2016-12-03T12:36:14.000Z</updated>
+    <updated>2016-12-03T13:54:27.000Z</updated>
     
     <content type="html"><![CDATA[<p>くるっと回る円のアニメーションを作りたい。</p>
 <p><img src="https://qiita-image-store.s3.amazonaws.com/0/2582/b6d35e8d-0301-57c4-e4c3-2b12ed7fafd9.png" alt="Create_a_New_Pen.png"></p>
 <p><a href="http://codepen.io/melo15/pen/yJmVEJ" target="_blank" rel="external">http://codepen.io/melo15/pen/yJmVEJ</a></p>
-<p>結論、下記のように書くと良い。</p>
-<pre><code class="html">&lt;svg width="124" height="124"&gt;
-    &lt;circle cx="62" cy="62" r="60" /&gt;
-&lt;/svg&gt;
-</code></pre>
-
-<pre><code class="css">svg {
-    transform: rotate(-90deg);
-}
-
-circle {
-    fill: transparent;
-    stroke: #4fa8df;
-    stroke-width: 4;
-    animation: circle 1s infinite;
-}
-
-@keyframes circle {
-  0% { stroke-dasharray: 0 377; }
-  99.9%,to { stroke-dasharray: 377 377; }
-}
-</code></pre>
-
-<p>インラインSVGなので、モダンブラウザは対応していて、<br>IE8以下、Android2系以下辺りは使えなさそう。<br><a href="http://caniuse.com/#feat=svg-html5" target="_blank" rel="external">http://caniuse.com/#feat=svg-html5</a></p>
-<p>半径60pxの円を作りたいとすると、<br><code>&lt;svg&gt;</code>の<code>width</code>と<code>height</code>には、<code>60px x 2 = 120px</code><br>これに、のちのち設定する円の外側の線幅(stroke-width)の4pxを足して、124pxを設定する。<br><code>&lt;circle&gt;</code>の<code>cx</code>と<code>cy</code>には、124pxの半分の値を設定し、円を<code>&lt;svg&gt;</code>の中央に配置する。<br><code>r</code>は円の半径で60pxを設定するが、この値によって後々アニメーションさせる時の値が変わってくる。</p>
-<p>CSSでは、<br><code>&lt;circle&gt;</code>の<code>fill</code>を<code>transparent</code>にして塗りつぶしなしに設定。<br><code>stroke</code>と<code>stroke-width</code>を指定して、円の外側に線を表示する。<br>これを<code>animation</code>を使って、くるっと回るアニメーションにする。</p>
-<p>アニメーションでは、破線を設定する<code>stroke-dasharray</code>を使う。<br><code>stroke-dasharray: 破線の長さ 破線の間隔;</code><br>この破線の長さをアニメーションさせる事で、くるっと回るアニメーションとなる。</p>
-<p>この時、破線の間隔の値は、円周の長さを設定する必要があり、計算によって導く。<br>円周の長さは<code>直径 x 3.14</code>で計算する。<br>今回は、<code>120 x 3.14 = 376.8</code>なので、小数点を切り上げて<code>377</code>とした。<br>あとは、破線の長さを0から377までアニメーションさせると、くるっと1周するアニメーションとなる。</p>
-<pre><code class="css">@-webkit-keyframes circle {
-  0% { stroke-dasharray: 0 377; }
-  99.9%,to { stroke-dasharray: 377 377; }
-}
-</code></pre>
-
-<p>もし、1周ではなく半分のところで止めたい場合は、<code>377 / 2 = 188.5</code>などを設定すると良い。</p>
+<h2 id="どのように実装するか"><a href="#どのように実装するか" class="headerlink" title="どのように実装するか"></a>どのように実装するか</h2><p>下記のように実装すると良い。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">svg</span> <span class="attr">width</span>=<span class="string">"124"</span> <span class="attr">height</span>=<span class="string">"124"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">circle</span> <span class="attr">cx</span>=<span class="string">"62"</span> <span class="attr">cy</span>=<span class="string">"62"</span> <span class="attr">r</span>=<span class="string">"60"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">svg</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">svg</span> &#123;</div><div class="line">    <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-90deg);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">circle</span> &#123;</div><div class="line">    <span class="attribute">fill</span>: transparent;</div><div class="line">    <span class="attribute">stroke</span>: <span class="number">#4fa8df</span>;</div><div class="line">    <span class="attribute">stroke-width</span>: <span class="number">4</span>;</div><div class="line">    <span class="attribute">animation</span>: circle <span class="number">1s</span> infinite;</div><div class="line">&#125;</div><div class="line"></div><div class="line">@<span class="keyword">keyframes</span> circle &#123;</div><div class="line">  0% &#123; <span class="attribute">stroke-dasharray</span>: <span class="number">0</span> <span class="number">377</span>; &#125;</div><div class="line">  99<span class="selector-class">.9</span>%,<span class="selector-tag">to</span> &#123; <span class="attribute">stroke-dasharray</span>: <span class="number">377</span> <span class="number">377</span>; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="対応ブラウザ"><a href="#対応ブラウザ" class="headerlink" title="対応ブラウザ"></a>対応ブラウザ</h2><p>インラインSVGなので、モダンブラウザは対応していて、<br>IE8以下、Android2系以下辺りは使えなさそう。<br><a href="http://caniuse.com/#feat=svg-html5" target="_blank" rel="external">http://caniuse.com/#feat=svg-html5</a></p>
+<h2 id="実装方法"><a href="#実装方法" class="headerlink" title="実装方法"></a>実装方法</h2><p>半径60pxの円を作りたいとすると、<br><code>&lt;svg&gt;</code>の<code>width</code>と<code>height</code>には、<code>60px x 2 = 120px</code><br>これに、のちのち設定する円の外側の線幅(stroke-width)の4pxを足して、124pxを設定する。<br><code>&lt;circle&gt;</code>の<code>cx</code>と<code>cy</code>には、124pxの半分の値を設定し、円を<code>&lt;svg&gt;</code>の中央に配置する。<br><code>r</code>は円の半径で60pxを設定するが、この値によって後々アニメーションさせる時の値が変わってくる。</p>
+<h3 id="CSSでは"><a href="#CSSでは" class="headerlink" title="CSSでは"></a>CSSでは</h3><p><code>&lt;circle&gt;</code>の<code>fill</code>を<code>transparent</code>にして塗りつぶしなしに設定。<br><code>stroke</code>と<code>stroke-width</code>を指定して、円の外側に線を表示する。<br>これを<code>animation</code>を使って、くるっと回るアニメーションにする。</p>
+<h3 id="アニメーションでは"><a href="#アニメーションでは" class="headerlink" title="アニメーションでは"></a>アニメーションでは</h3><p>破線を設定する<code>stroke-dasharray</code>を使う。<br><code>stroke-dasharray: 破線の長さ 破線の間隔;</code><br>この破線の長さをアニメーションさせる事で、くるっと回るアニメーションとなる。</p>
+<h3 id="破線の間隔の値"><a href="#破線の間隔の値" class="headerlink" title="破線の間隔の値"></a>破線の間隔の値</h3><p>この時、破線の間隔の値は、円周の長さを設定する必要があり、計算によって導く。<br>円周の長さは<code>直径 x 3.14</code>で計算する。<br>今回は、<code>120 x 3.14 = 376.8</code>なので、小数点を切り上げて<code>377</code>とした。<br>あとは、破線の長さを0から377までアニメーションさせると、くるっと1周するアニメーションとなる。</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@-<span class="keyword">webkit</span>-<span class="keyword">keyframes</span> circle &#123;</div><div class="line">  0% &#123; <span class="attribute">stroke-dasharray</span>: <span class="number">0</span> <span class="number">377</span>; &#125;</div><div class="line">  99<span class="selector-class">.9</span>%,<span class="selector-tag">to</span> &#123; <span class="attribute">stroke-dasharray</span>: <span class="number">377</span> <span class="number">377</span>; &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="1周ではなく半分のところで止めたい場合は"><a href="#1周ではなく半分のところで止めたい場合は" class="headerlink" title="1周ではなく半分のところで止めたい場合は"></a>1周ではなく半分のところで止めたい場合は</h3><p>半分のところで止めたい場合は、<code>377 / 2 = 188.5</code>などを設定すると良い。</p>
 <p>最後に、そのままだとアニメーションの開始点が90度ずれてしまうので、<br><code>&lt;svg&gt;</code>に<code>transform: rotate(-90deg);</code>を設定して、上からくるっと回るアニメーションにする。</p>
 <p>同じようなアニメーションのデモも、CodePenにあったのでメモ。</p>
 <p><a href="https://codepen.io/kyledws/pen/Gvelt/" target="_blank" rel="external">https://codepen.io/kyledws/pen/Gvelt/</a></p>
