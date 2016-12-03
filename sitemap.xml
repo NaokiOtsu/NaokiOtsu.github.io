@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/12/03/live-reload-browser-sync/</loc>
+    
+    <lastmod>2016-12-03T12:31:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/09/03/button-click-animation/</loc>
     
-    <lastmod>2016-12-03T12:15:09.000Z</lastmod>
+    <lastmod>2016-12-03T12:29:41.000Z</lastmod>
     
   </url>
   
