@@ -4,9 +4,9 @@
   <subtitle>フロントエンド(HTML,CSS,JavaScript)を中心に。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
-  <updated>2016-12-03T14:01:55.000Z</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://naoki-otsu.info/"/>
+  <updated>2016-12-03T21:31:42.000Z</updated>
+  <id>http://naoki-otsu.info/</id>
   
   <author>
     <name>Naoki Otsu</name>
@@ -17,10 +17,10 @@
   
   <entry>
     <title>ローカルにPHP環境構築してBrowserSyncでLiveReload</title>
-    <link href="http://yoursite.com/2016/11/28/local-php-browser-sync/"/>
-    <id>http://yoursite.com/2016/11/28/local-php-browser-sync/</id>
+    <link href="http://naoki-otsu.info/2016/11/28/local-php-browser-sync/"/>
+    <id>http://naoki-otsu.info/2016/11/28/local-php-browser-sync/</id>
     <published>2016-11-28T12:49:03.000Z</published>
-    <updated>2016-12-03T14:01:55.000Z</updated>
+    <updated>2016-12-03T21:31:42.000Z</updated>
     
     <content type="html"><![CDATA[<p>MacのローカルにPHP環境構築して、<a href="https://www.browsersync.io/" target="_blank">BrowserSync</a>でLiveReloadさせた時のMEMO。</p>
 <h2 id="実装方法"><a href="#実装方法" class="headerlink" title="実装方法"></a>実装方法</h2><p>調べた結果、<a href="https://www.npmjs.com/package/gulp-connect-php" target="_blank">gulp-connect-php</a>を使うのが早そうだった。</p>
@@ -37,14 +37,16 @@
     </summary>
     
     
+      <category term="browsersync" scheme="http://naoki-otsu.info/tags/browsersync/"/>
+    
   </entry>
   
   <entry>
     <title>Youtubeの再生リストの動画を一覧表示する | Youtube Data API v3</title>
-    <link href="http://yoursite.com/2016/11/13/youtube-play-list-youtube-data-api-v3/"/>
-    <id>http://yoursite.com/2016/11/13/youtube-play-list-youtube-data-api-v3/</id>
+    <link href="http://naoki-otsu.info/2016/11/13/youtube-play-list-youtube-data-api-v3/"/>
+    <id>http://naoki-otsu.info/2016/11/13/youtube-play-list-youtube-data-api-v3/</id>
     <published>2016-11-13T12:48:04.000Z</published>
-    <updated>2016-12-03T13:32:20.000Z</updated>
+    <updated>2016-12-03T21:32:38.000Z</updated>
     
     <content type="html"><![CDATA[<p>自分のプライベートなプロダクトで、<br>Youtubeの再生リストの動画を一覧表示する機能が入れる必要があって、<br><a href="https://developers.google.com/youtube/v3/getting-started?hl=ja" target="_blank">Youtube Data API v3 のガイド</a>を見ながらやっていたが、<br>スムーズに行かなかったので結論の実装方法をメモしておくことに。</p>
 <h2><strong>実装方法</strong></h2>
@@ -78,14 +80,16 @@
     </summary>
     
     
+      <category term="youtube" scheme="http://naoki-otsu.info/tags/youtube/"/>
+    
   </entry>
   
   <entry>
     <title>Font Awesomeで、「Failed to decode downloaded font」が出てしまう時</title>
-    <link href="http://yoursite.com/2016/11/11/font-awesome-error/"/>
-    <id>http://yoursite.com/2016/11/11/font-awesome-error/</id>
+    <link href="http://naoki-otsu.info/2016/11/11/font-awesome-error/"/>
+    <id>http://naoki-otsu.info/2016/11/11/font-awesome-error/</id>
     <published>2016-11-11T12:46:57.000Z</published>
-    <updated>2016-12-03T13:34:07.000Z</updated>
+    <updated>2016-12-03T21:31:01.000Z</updated>
     
     <content type="html"><![CDATA[<p><a href="http://fontawesome.io/" target="_blank">Font Awesome</a>を使っていて、本番サイトで確認しようとしたら、<br>フォントが正しく出ていない… ローカルでは大丈夫だったのに..</p>
 <p>そして、コンソールを見たら、<br><strong>「Failed to decode downloaded font」</strong><br>とか<br><strong>「OTS parsing error: incorrect file size in WOFF header」</strong><br>とか出ている様子。</p>
@@ -103,14 +107,16 @@
     </summary>
     
     
+      <category term="fontawesome" scheme="http://naoki-otsu.info/tags/fontawesome/"/>
+    
   </entry>
   
   <entry>
     <title>ソフトバンク 孫社長</title>
-    <link href="http://yoursite.com/2016/11/01/softbank-son-president/"/>
-    <id>http://yoursite.com/2016/11/01/softbank-son-president/</id>
+    <link href="http://naoki-otsu.info/2016/11/01/softbank-son-president/"/>
+    <id>http://naoki-otsu.info/2016/11/01/softbank-son-president/</id>
     <published>2016-11-01T12:46:03.000Z</published>
-    <updated>2016-12-03T21:07:19.000Z</updated>
+    <updated>2016-12-03T21:32:02.000Z</updated>
     
     <content type="html"><![CDATA[<iframe width="560" height="315" src="https://www.youtube.com/embed/zhrz8KdUB4w" frameborder="0" allowfullscreen></iframe>
 
@@ -129,19 +135,17 @@
     
     </summary>
     
-      <category term="Private" scheme="http://yoursite.com/categories/Private/"/>
     
-    
-      <category term="Private" scheme="http://yoursite.com/tags/Private/"/>
+      <category term="private" scheme="http://naoki-otsu.info/tags/private/"/>
     
   </entry>
   
   <entry>
     <title>CakePHP3とBrowserSyncでのLiveReload</title>
-    <link href="http://yoursite.com/2016/10/29/cakephp3-browser-sync-live-reload/"/>
-    <id>http://yoursite.com/2016/10/29/cakephp3-browser-sync-live-reload/</id>
+    <link href="http://naoki-otsu.info/2016/10/29/cakephp3-browser-sync-live-reload/"/>
+    <id>http://naoki-otsu.info/2016/10/29/cakephp3-browser-sync-live-reload/</id>
     <published>2016-10-29T12:45:10.000Z</published>
-    <updated>2016-12-03T14:13:16.000Z</updated>
+    <updated>2016-12-03T21:30:50.000Z</updated>
     
     <content type="html"><![CDATA[<p>[CakePHP3でWebアプリの開発をしていたが、<br>BrowserSyncを使ってLiveReloadさせて効率よく開発していきたい。そんな時のMEMO。</p>
 <h2 id="実装方法"><a href="#実装方法" class="headerlink" title="実装方法"></a>実装方法</h2><p>CakePHPでは</p>
@@ -163,14 +167,16 @@
     </summary>
     
     
+      <category term="cakephp3" scheme="http://naoki-otsu.info/tags/cakephp3/"/>
+    
   </entry>
   
   <entry>
     <title>Vagrantで開発環境構築(PHP+Mysql) &amp;#124; VirtualBox</title>
-    <link href="http://yoursite.com/2016/10/25/vagrant-php-mysql-virtualbox/"/>
-    <id>http://yoursite.com/2016/10/25/vagrant-php-mysql-virtualbox/</id>
+    <link href="http://naoki-otsu.info/2016/10/25/vagrant-php-mysql-virtualbox/"/>
+    <id>http://naoki-otsu.info/2016/10/25/vagrant-php-mysql-virtualbox/</id>
     <published>2016-10-25T12:44:12.000Z</published>
-    <updated>2016-12-03T14:13:49.000Z</updated>
+    <updated>2016-12-03T21:32:23.000Z</updated>
     
     <content type="html"><![CDATA[<p>開発環境構築のメモ。</p>
 <h2 id="参考にした記事"><a href="#参考にした記事" class="headerlink" title="参考にした記事"></a>参考にした記事</h2><p>こちらの記事を参考に構築。<br><a href="http://fnya.cocolog-nifty.com/blog/2015/12/vagrant-centos7.html" target="_blank" rel="external">http://fnya.cocolog-nifty.com/blog/2015/12/vagrant-centos7.html</a></p>
@@ -186,14 +192,16 @@
     </summary>
     
     
+      <category term="vagrant" scheme="http://naoki-otsu.info/tags/vagrant/"/>
+    
   </entry>
   
   <entry>
     <title>JavaScriptで要素の入れ替え | replaceChild, cloneNode</title>
-    <link href="http://yoursite.com/2016/09/24/javascript-replace-child-clone-node/"/>
-    <id>http://yoursite.com/2016/09/24/javascript-replace-child-clone-node/</id>
+    <link href="http://naoki-otsu.info/2016/09/24/javascript-replace-child-clone-node/"/>
+    <id>http://naoki-otsu.info/2016/09/24/javascript-replace-child-clone-node/</id>
     <published>2016-09-24T12:42:55.000Z</published>
-    <updated>2016-12-03T14:14:10.000Z</updated>
+    <updated>2016-12-03T21:31:16.000Z</updated>
     
     <content type="html"><![CDATA[<p>[ピュア(Vanilla)なJavaScriptでの要素の入れ替えのMEMO。<br>例えばAとBの要素を入れ替えたい時など。</p>
 <h2 id="実装方法"><a href="#実装方法" class="headerlink" title="実装方法"></a>実装方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> clone_A = element_A.cloneNode(<span class="literal">true</span>);</div><div class="line"><span class="keyword">var</span> clone_B = element_B.cloneNode(<span class="literal">true</span>);</div><div class="line"></div><div class="line">element_A.parentNode.replaceChild(clone_A, element_B);</div><div class="line">element_B.parentNode.replaceChild(clone_B, element_A);</div></pre></td></tr></table></figure>
@@ -208,14 +216,16 @@
     </summary>
     
     
+      <category term="js" scheme="http://naoki-otsu.info/tags/js/"/>
+    
   </entry>
   
   <entry>
     <title>JavaScriptで配列をシャッフルさせる</title>
-    <link href="http://yoursite.com/2016/09/22/javascript-array-shuffle/"/>
-    <id>http://yoursite.com/2016/09/22/javascript-array-shuffle/</id>
+    <link href="http://naoki-otsu.info/2016/09/22/javascript-array-shuffle/"/>
+    <id>http://naoki-otsu.info/2016/09/22/javascript-array-shuffle/</id>
     <published>2016-09-22T12:41:44.000Z</published>
-    <updated>2016-12-03T14:14:46.000Z</updated>
+    <updated>2016-12-03T21:31:08.000Z</updated>
     
     <content type="html"><![CDATA[<p>[ピュア(Vanilla)なJavaScriptでの配列のシャッフル。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> targets = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</div><div class="line"><span class="keyword">var</span> results = [];</div><div class="line"><span class="keyword">while</span> (targets.length) &#123;</div><div class="line">    results.push(targets.splice(<span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * targets.length), <span class="number">1</span>)[<span class="number">0</span>]);</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(results); <span class="comment">// 例: [5, 1, 4, 3, 2]</span></div></pre></td></tr></table></figure>
@@ -231,14 +241,16 @@
     </summary>
     
     
+      <category term="js" scheme="http://naoki-otsu.info/tags/js/"/>
+    
   </entry>
   
   <entry>
     <title>JavaScriptでペアな配列を作る時のMEMO</title>
-    <link href="http://yoursite.com/2016/09/22/javascript-pare-array-create/"/>
-    <id>http://yoursite.com/2016/09/22/javascript-pare-array-create/</id>
+    <link href="http://naoki-otsu.info/2016/09/22/javascript-pare-array-create/"/>
+    <id>http://naoki-otsu.info/2016/09/22/javascript-pare-array-create/</id>
     <published>2016-09-22T12:39:34.000Z</published>
-    <updated>2016-12-03T13:43:23.000Z</updated>
+    <updated>2016-12-03T21:31:12.000Z</updated>
     
     <content type="html"><![CDATA[<p>[神経衰弱を作る時のような、[1, 1, 2, 2]のようなペアな値を持った配列が欲しい時の実装MEMO。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> cards = [];</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &amp;lt;= <span class="number">2</span>; i++) &#123;</div><div class="line">    cards[cards.length] = i;</div><div class="line">    cards[cards.length] = i;</div><div class="line">&#125;</div><div class="line"><span class="built_in">console</span>.log(cards); <span class="comment">// [1, 1, 2, 2]</span></div></pre></td></tr></table></figure>]]></content>
@@ -251,14 +263,16 @@
     </summary>
     
     
+      <category term="js" scheme="http://naoki-otsu.info/tags/js/"/>
+    
   </entry>
   
   <entry>
     <title>addEventListenerに引数を渡しつつremoveEventListenerしたい時</title>
-    <link href="http://yoursite.com/2016/09/22/javascript-addeventlistener-param-removeeventlistener/"/>
-    <id>http://yoursite.com/2016/09/22/javascript-addeventlistener-param-removeeventlistener/</id>
+    <link href="http://naoki-otsu.info/2016/09/22/javascript-addeventlistener-param-removeeventlistener/"/>
+    <id>http://naoki-otsu.info/2016/09/22/javascript-addeventlistener-param-removeeventlistener/</id>
     <published>2016-09-22T12:38:36.000Z</published>
-    <updated>2016-12-03T13:43:43.000Z</updated>
+    <updated>2016-12-03T21:31:05.000Z</updated>
     
     <content type="html"><![CDATA[<p>全然スマートじゃないからもっと良い方法ありそうだけど、一応備忘録。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">element.addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span> <span class="title">onClick</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    onClickHandler(onClick, <span class="string">'渡したい引数'</span>);</div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">onClickHandler</span>(<span class="params">func, text</span>) </span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(text); <span class="comment">// 渡したい引数</span></div><div class="line">    element.removeEventListener(<span class="string">'click'</span>, func);</div><div class="line">&#125;</div></pre></td></tr></table></figure>]]></content>
@@ -271,14 +285,16 @@
     </summary>
     
     
+      <category term="js" scheme="http://naoki-otsu.info/tags/js/"/>
+    
   </entry>
   
   <entry>
     <title>ボタンのデザインを変えずに、クリック領域だけ広げるTips</title>
-    <link href="http://yoursite.com/2016/09/18/no-change-button-design-click-scale/"/>
-    <id>http://yoursite.com/2016/09/18/no-change-button-design-click-scale/</id>
+    <link href="http://naoki-otsu.info/2016/09/18/no-change-button-design-click-scale/"/>
+    <id>http://naoki-otsu.info/2016/09/18/no-change-button-design-click-scale/</id>
     <published>2016-09-18T12:37:05.000Z</published>
-    <updated>2016-12-03T14:15:59.000Z</updated>
+    <updated>2016-12-03T21:31:49.000Z</updated>
     
     <content type="html"><![CDATA[<p>「<a href="https://www.amazon.co.jp/CSS%E3%82%B7%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88-%E2%80%9547%E3%81%AE%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E3%81%A7CSS%E3%82%92%E8%87%AA%E5%9C%A8%E3%81%AB%E6%93%8D%E3%82%8B-Lea-Verou/dp/4873117666/ref=sr_1_1?ie=UTF8&amp;qid=1474188594&amp;sr=8-1&amp;keywords=CSS%E3%82%B7%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88" target="_blank" rel="external">CSSシークレット</a>」で書かれていた備忘録だが、<br>ボタンのデザインは変えたくない、でもクリックできる領域を広げたい時のTips。</p>
 <h2 id="実装方法"><a href="#実装方法" class="headerlink" title="実装方法"></a>実装方法</h2><p>擬似要素を使って下記のように実装する。</p>
@@ -298,14 +314,16 @@
     </summary>
     
     
+      <category term="css" scheme="http://naoki-otsu.info/tags/css/"/>
+    
   </entry>
   
   <entry>
     <title>SVGで円をアニメーションさせたい時のMEMO</title>
-    <link href="http://yoursite.com/2016/09/18/svg-circle-animation/"/>
-    <id>http://yoursite.com/2016/09/18/svg-circle-animation/</id>
+    <link href="http://naoki-otsu.info/2016/09/18/svg-circle-animation/"/>
+    <id>http://naoki-otsu.info/2016/09/18/svg-circle-animation/</id>
     <published>2016-09-18T12:35:38.000Z</published>
-    <updated>2016-12-03T14:16:21.000Z</updated>
+    <updated>2016-12-03T21:32:12.000Z</updated>
     
     <content type="html"><![CDATA[<p>くるっと回る円のアニメーションを作りたい。</p>
 <p><img src="https://qiita-image-store.s3.amazonaws.com/0/2582/b6d35e8d-0301-57c4-e4c3-2b12ed7fafd9.png" alt="Create_a_New_Pen.png"></p>
@@ -333,14 +351,16 @@
     </summary>
     
     
+      <category term="svg" scheme="http://naoki-otsu.info/tags/svg/"/>
+    
   </entry>
   
   <entry>
     <title>border-imageをRetina対応させるときの備忘録</title>
-    <link href="http://yoursite.com/2016/09/18/border-image-retina/"/>
-    <id>http://yoursite.com/2016/09/18/border-image-retina/</id>
+    <link href="http://naoki-otsu.info/2016/09/18/border-image-retina/"/>
+    <id>http://naoki-otsu.info/2016/09/18/border-image-retina/</id>
     <published>2016-09-18T12:34:20.000Z</published>
-    <updated>2016-12-03T13:57:44.000Z</updated>
+    <updated>2016-12-03T21:29:36.000Z</updated>
     
     <content type="html"><![CDATA[<p>border-imageを使う時は、<br><a href="http://border-image.com/" target="_blank" rel="external">http://border-image.com/</a><br>を使ってCSSソースを生成して貼り付ける事が多いが、<br>このサイトで生成したCSSはRetina対応してない素の画像サイズなので、<br>スマホ制作してる時とかは画像が大きくなっちゃう。</p>
 <h2 id="Retina対応させる方法"><a href="#Retina対応させる方法" class="headerlink" title="Retina対応させる方法"></a>Retina対応させる方法</h2><p>Retina対応する場合は、<code>border-image</code>の数値は変えず、<br><code>border-width</code>の値だけ、1/2とかにすると良いので、<br>例えば、こうなっていたら↓</p>
@@ -355,14 +375,16 @@
     </summary>
     
     
+      <category term="css" scheme="http://naoki-otsu.info/tags/css/"/>
+    
   </entry>
   
   <entry>
     <title>さくっとLiveReload導入メモ</title>
-    <link href="http://yoursite.com/2016/09/18/live-reload-browser-sync/"/>
-    <id>http://yoursite.com/2016/09/18/live-reload-browser-sync/</id>
+    <link href="http://naoki-otsu.info/2016/09/18/live-reload-browser-sync/"/>
+    <id>http://naoki-otsu.info/2016/09/18/live-reload-browser-sync/</id>
     <published>2016-09-18T12:30:35.000Z</published>
-    <updated>2016-12-03T13:59:03.000Z</updated>
+    <updated>2016-12-03T21:31:33.000Z</updated>
     
     <content type="html"><![CDATA[<p>さっとローカルサーバーを立ち上げて、LiveReloadさせて作業する時のメモ。</p>
 <h2 id="セットアップ"><a href="#セットアップ" class="headerlink" title="セットアップ"></a>セットアップ</h2><p>まずは作業場所で、セットアップ。</p>
@@ -382,14 +404,16 @@
     </summary>
     
     
+      <category term="browsersync" scheme="http://naoki-otsu.info/tags/browsersync/"/>
+    
   </entry>
   
   <entry>
     <title>あるボタンを押した時のアニメーション効果を連打しても確実に付けさせたい</title>
-    <link href="http://yoursite.com/2016/09/03/button-click-animation/"/>
-    <id>http://yoursite.com/2016/09/03/button-click-animation/</id>
+    <link href="http://naoki-otsu.info/2016/09/03/button-click-animation/"/>
+    <id>http://naoki-otsu.info/2016/09/03/button-click-animation/</id>
     <published>2016-09-03T12:05:17.000Z</published>
-    <updated>2016-12-03T14:00:58.000Z</updated>
+    <updated>2016-12-03T21:30:43.000Z</updated>
     
     <content type="html"><![CDATA[<p>あるボタンを押した時に、<br>ぽよんと反応するようなアニメーション効果を与えたい。<br>その要素を押したら、例えば <code>.click-animation</code>のような、ぽよんとするCSSアニメーションを付けたクラスを、付与させる事が多いが、そんな時の実装MEMO。  </p>
 <h2 id="従来の方法"><a href="#従来の方法" class="headerlink" title="従来の方法"></a>従来の方法</h2><p>要素を押した時に、<code>.click-animation</code>が既に付与されていたら、<br>削除してから付与しないとアニメーションしなく、<br>また削除して即付与してもアニメーションしないので、<br><code>setTimeout()</code>などで適当な一定時間待って付与する事が多かった。</p>
@@ -408,6 +432,8 @@
     
     </summary>
     
+    
+      <category term="js" scheme="http://naoki-otsu.info/tags/js/"/>
     
   </entry>
   
