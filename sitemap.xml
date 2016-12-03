@@ -2,6 +2,97 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2016/11/28/local-php-browser-sync/</loc>
+    
+    <lastmod>2016-12-03T12:49:27.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/13/youtube-play-list-youtube-data-api-v3/</loc>
+    
+    <lastmod>2016-12-03T12:48:33.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/11/font-awesome-error/</loc>
+    
+    <lastmod>2016-12-03T12:47:25.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/11/01/softbank-son-president/</loc>
+    
+    <lastmod>2016-12-03T12:46:31.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/29/cakephp3-browser-sync-live-reload/</loc>
+    
+    <lastmod>2016-12-03T12:45:39.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/10/25/vagrant-php-mysql-virtualbox/</loc>
+    
+    <lastmod>2016-12-03T12:44:40.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/24/javascript-replace-child-clone-node/</loc>
+    
+    <lastmod>2016-12-03T12:43:42.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/22/javascript-array-shuffle/</loc>
+    
+    <lastmod>2016-12-03T12:42:20.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/22/javascript-pare-array-create/</loc>
+    
+    <lastmod>2016-12-03T12:41:00.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/22/javascript-addeventlistener-param-removeeventlistener/</loc>
+    
+    <lastmod>2016-12-03T12:40:02.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/18/no-change-button-design-click-scale/</loc>
+    
+    <lastmod>2016-12-03T12:37:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/18/svg-circle-animation/</loc>
+    
+    <lastmod>2016-12-03T12:36:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2016/09/18/border-image-retina/</loc>
+    
+    <lastmod>2016-12-03T12:34:55.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2016/09/18/live-reload-browser-sync/</loc>
     
     <lastmod>2016-12-03T12:32:26.000Z</lastmod>
