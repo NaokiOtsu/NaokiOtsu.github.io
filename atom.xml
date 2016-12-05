@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Naoki Otsu</title>
+  <title>Otsu.info</title>
   <subtitle>フロントエンド(HTML,CSS,JavaScript)を中心に。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
