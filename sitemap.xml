@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://naoki-otsu.info/about/index.html</loc>
+    
+    <lastmod>2016-12-06T21:21:14.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://naoki-otsu.info/2016/12/04/git-submodule-replace-plain-content/</loc>
     
     <lastmod>2016-12-06T20:33:51.000Z</lastmod>
