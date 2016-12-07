@@ -124,7 +124,7 @@
     <link href="http://naoki-otsu.info/2016/11/28/local-php-browser-sync/"/>
     <id>http://naoki-otsu.info/2016/11/28/local-php-browser-sync/</id>
     <published>2016-11-28T12:49:03.000Z</published>
-    <updated>2016-12-07T21:28:56.000Z</updated>
+    <updated>2016-12-07T22:11:35.000Z</updated>
     
     <content type="html"><![CDATA[<p>MacのローカルにPHP環境構築して、<a href="https://www.browsersync.io/" target="_blank">BrowserSync</a>でLiveReloadさせた時のMEMOです。</p>
 <h2 id="実装方法"><a href="#実装方法" class="headerlink" title="実装方法"></a>実装方法</h2><p>調べた結果、<a href="https://www.npmjs.com/package/gulp-connect-php" target="_blank">gulp-connect-php</a>を使うのが早そうでした。</p>
@@ -135,8 +135,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;MacのローカルにPHP環境構築して、&lt;a href=&quot;https://www.browsersync.io/&quot; target=&quot;_blank&quot;&gt;BrowserSync&lt;/a&gt;でLiveReloadさせた時のMEMOです。&lt;/p&gt;
-&lt;h2 id=&quot;実装方法&quot;&gt;&lt;a href
+      MacのローカルにPHP環境を構築して、BrowserSyncでLiveReloadさせた時のMEMOです。調べた結果、gulp-connect-phpを使うのが早そうでした。
     
     </summary>
     
@@ -398,7 +397,7 @@
     <link href="http://naoki-otsu.info/2016/09/18/no-change-button-design-click-scale/"/>
     <id>http://naoki-otsu.info/2016/09/18/no-change-button-design-click-scale/</id>
     <published>2016-09-18T12:37:05.000Z</published>
-    <updated>2016-12-07T22:04:54.000Z</updated>
+    <updated>2016-12-07T22:10:24.000Z</updated>
     
     <content type="html"><![CDATA[<p>「<a href="https://www.amazon.co.jp/CSS%E3%82%B7%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88-%E2%80%9547%E3%81%AE%E3%83%86%E3%82%AF%E3%83%8B%E3%83%83%E3%82%AF%E3%81%A7CSS%E3%82%92%E8%87%AA%E5%9C%A8%E3%81%AB%E6%93%8D%E3%82%8B-Lea-Verou/dp/4873117666/ref=sr_1_1?ie=UTF8&amp;qid=1474188594&amp;sr=8-1&amp;keywords=CSS%E3%82%B7%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88" target="_blank" rel="external">CSSシークレット</a>」で書かれていた備忘録で、言葉では伝えるのが難しいですが、<br>開発していると、ボタンそのもののwidthとheightでは領域が狭くて、ユーザーさんはクリックしにくい、<br>ただそのボタンのデザインは変更せずに、クリックできる領域だけを広げたいという時があります。そんな時の実装方法です。</p>
 <h2 id="実装方法"><a href="#実装方法" class="headerlink" title="実装方法"></a>実装方法</h2><p>擬似要素を使って下記のように実装します。</p>
@@ -413,7 +412,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;「&lt;a href=&quot;https://www.amazon.co.jp/CSS%E3%82%B7%E3%83%BC%E3%82%AF%E3%83%AC%E3%83%83%E3%83%88-%E2%80%9547%E3%81%AE%E3%83%86%E3%82%AF%E3%83
+      開発していると、ボタンそのもののwidthとheightでは領域が狭くて、ユーザーさんはクリックしにくい、ただそのボタンのデザインは変更せずに、クリックできる領域だけを広げたいという時があります。そんな時の実装方法です。
     
     </summary>
     

@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://naoki-otsu.info/2016/11/28/local-php-browser-sync/</loc>
+    
+    <lastmod>2016-12-07T22:11:35.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://naoki-otsu.info/2016/09/18/no-change-button-design-click-scale/</loc>
     
-    <lastmod>2016-12-07T22:04:54.000Z</lastmod>
+    <lastmod>2016-12-07T22:10:24.000Z</lastmod>
     
   </url>
   
@@ -33,13 +40,6 @@
     <loc>http://naoki-otsu.info/2016/09/18/svg-circle-animation/</loc>
     
     <lastmod>2016-12-07T21:36:35.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naoki-otsu.info/2016/11/28/local-php-browser-sync/</loc>
-    
-    <lastmod>2016-12-07T21:28:56.000Z</lastmod>
     
   </url>
   
