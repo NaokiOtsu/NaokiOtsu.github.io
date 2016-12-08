@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Otsu.info</title>
+  <title>Otty</title>
   <subtitle>フロントエンド(HTML,CSS,JavaScript)を中心に。</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -145,11 +145,11 @@
   </entry>
   
   <entry>
-    <title>Youtubeの再生リストの動画を一覧表示する | Youtube Data API v3</title>
+    <title>Youtubeの再生リストの動画を一覧表示する - Youtube Data API v3</title>
     <link href="http://naoki-otsu.info/2016/11/13/youtube-play-list-youtube-data-api-v3/"/>
     <id>http://naoki-otsu.info/2016/11/13/youtube-play-list-youtube-data-api-v3/</id>
     <published>2016-11-13T12:48:04.000Z</published>
-    <updated>2016-12-07T21:39:23.000Z</updated>
+    <updated>2016-12-08T14:26:56.000Z</updated>
     
     <content type="html"><![CDATA[<p>自分のプライベートなプロダクトで、<br>Youtubeの再生リストの動画を一覧表示する機能が入れる必要がありまして、<br><a href="https://developers.google.com/youtube/v3/getting-started?hl=ja" target="_blank">Youtube Data API v3 のガイド</a>を見ながらやっていましたが、<br>スムーズに行かなかったので結論の実装方法をメモしておくことにしました。</p>
 <h2><strong>実装方法</strong></h2>
@@ -300,11 +300,11 @@
   </entry>
   
   <entry>
-    <title>JavaScriptで要素の入れ替え | replaceChild, cloneNode</title>
+    <title>JavaScriptで要素の入れ替え - replaceChild, cloneNode</title>
     <link href="http://naoki-otsu.info/2016/09/24/javascript-replace-child-clone-node/"/>
     <id>http://naoki-otsu.info/2016/09/24/javascript-replace-child-clone-node/</id>
     <published>2016-09-24T12:42:55.000Z</published>
-    <updated>2016-12-07T21:27:19.000Z</updated>
+    <updated>2016-12-08T14:26:56.000Z</updated>
     
     <content type="html"><![CDATA[<p>ピュア(Vanilla)なJavaScriptでの要素の入れ替えのMEMOです。<br>例えばAとBの要素を入れ替えたい時などに使います。</p>
 <h2 id="実装方法"><a href="#実装方法" class="headerlink" title="実装方法"></a>実装方法</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> clone_A = element_A.cloneNode(<span class="literal">true</span>);</div><div class="line"><span class="keyword">var</span> clone_B = element_B.cloneNode(<span class="literal">true</span>);</div><div class="line"></div><div class="line">element_A.parentNode.replaceChild(clone_A, element_B);</div><div class="line">element_B.parentNode.replaceChild(clone_B, element_A);</div></pre></td></tr></table></figure>
