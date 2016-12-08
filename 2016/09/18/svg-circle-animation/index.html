@@ -30,7 +30,91 @@
 &lt;p&gt;最後に、そのままだとアニメーションの開始点が90度ずれてしまうので、&lt;br&gt;&lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt;に&lt;code&gt;transform: rotate(-90deg);&lt;/code&gt;を設定して、上からくるっと回るアニメーションにします。&lt;/p&gt;
 &lt;p&gt;同じようなアニメーションのデモも、CodePenにあったのでメモしておきます。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://codepen.io/kyledws/pen/Gvelt/&quot;&gt;https://codepen.io/kyledws/pen/Gvelt/&lt;/a&gt;&lt;/p&gt;
-</p><p>page.source</p><p>_posts/svg-circle-animation.md</p><p>page.link</p><p></p></div><div class="wrap"><header><a href="/" class="logo-link"><div class="site-name">Otty</div></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">Blog</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">About</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">Archive</a></li><li class="nav-list-item"><a href="https://twitter.com/melo15" target="_blank" class="nav-list-link">Twitter</a></li><li class="nav-list-item"><a href="https://github.com/NaokiOtsu" target="_blank" class="nav-list-link">GitHub</a></li></ul></header><section class="container"><div class="sidebar"><div class="avator"><a href="https://twitter.com/melo15"><img src="/images/logo.png"></a></div><div class="name"><span>Author: </span>Naoki Otsu</div><div class="profile"><span>Job:  </span>Frontend Engineer<br>フロントエンドに関わる事をつぶやいたりブログに書いたりしています。熊本出身。バスケ(特にNBA)好きです。<a class="more" href="/about/">...more</a><br></div><a href="https://twitter.com/melo15" class="twitter-follow-button" data-show-count="false">Follow @melo15</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><div style="margin-top: 30px;"><a class="twitter-timeline" data-width="220" data-height="400" data-theme="light" href="https://twitter.com/melo15">Tweets by melo15</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div></div><div class="post"><article class="post-block"><h1 class="post-title">SVGで円をアニメーションさせたい時のMEMO</h1><div class="post-info">2016年9月18日</div><div class="post-content"><p>ローディングバーや円グラフを表示したい時など、<br>くるっと回る円のアニメーションを作りたい時があります。</p>
+</p><p>page.source</p><p>_posts/svg-circle-animation.md</p><p>page.full_source</p><p>/Users/naoki-otsu/Desktop/git/NaokiOtsu.github.io/source/_posts/svg-circle-animation.md</p><p>page.path</p><p>2016/09/18/svg-circle-animation/</p><p>page.permalink</p><p>http://naoki-otsu.info/2016/09/18/svg-circle-animation/</p><p>page.raw</p><p>---
+title: SVGで円をアニメーションさせたい時のMEMO
+date: 2016-09-18 21:35:38
+tags: svg
+---
+
+ローディングバーや円グラフを表示したい時など、
+くるっと回る円のアニメーションを作りたい時があります。
+
+&lt;img src=&quot;https://qiita-image-store.s3.amazonaws.com/0/2582/b6d35e8d-0301-57c4-e4c3-2b12ed7fafd9.png&quot; alt=&quot;Create_a_New_Pen.png&quot; /&gt;
+
+http://codepen.io/melo15/pen/yJmVEJ
+
+## 実装方法
+下記のように実装すると良いです。
+
+``` html
+&lt;svg width=&quot;124&quot; height=&quot;124&quot;&gt;
+    &lt;circle cx=&quot;62&quot; cy=&quot;62&quot; r=&quot;60&quot; /&gt;
+&lt;/svg&gt;
+```
+
+``` css
+svg {
+    transform: rotate(-90deg);
+}
+
+circle {
+    fill: transparent;
+    stroke: #4fa8df;
+    stroke-width: 4;
+    animation: circle 1s infinite;
+}
+
+@keyframes circle {
+  0% { stroke-dasharray: 0 377; }
+  99.9%,to { stroke-dasharray: 377 377; }
+}
+```
+
+## 対応ブラウザ
+インラインSVGなので、モダンブラウザは対応していて、
+IE8以下、Android2系以下辺りは使えなさそうです。
+http://caniuse.com/#feat=svg-html5
+
+## 実装方法
+半径60pxの円を作りたいとすると、
+&lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt;の&lt;code&gt;width&lt;/code&gt;と&lt;code&gt;height&lt;/code&gt;には、&lt;code&gt;60px x 2 = 120px&lt;/code&gt;
+これに、のちのち設定する円の外側の線幅(stroke-width)の4pxを足して、124pxを設定します。
+&lt;code&gt;&amp;lt;circle&amp;gt;&lt;/code&gt;の&lt;code&gt;cx&lt;/code&gt;と&lt;code&gt;cy&lt;/code&gt;には、124pxの半分の値を設定し、円を&lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt;の中央に配置します。
+&lt;code&gt;r&lt;/code&gt;は円の半径で60pxを設定しますが、この値によって後々アニメーションさせる時の値が変わってきます。
+
+### CSSでは
+&lt;code&gt;&amp;lt;circle&amp;gt;&lt;/code&gt;の&lt;code&gt;fill&lt;/code&gt;を&lt;code&gt;transparent&lt;/code&gt;にして塗りつぶしなしに設定します。
+&lt;code&gt;stroke&lt;/code&gt;と&lt;code&gt;stroke-width&lt;/code&gt;を指定して、円の外側に線を表示します。
+これを&lt;code&gt;animation&lt;/code&gt;を使って、くるっと回るアニメーションにします。
+
+### アニメーションでは
+破線を設定する&lt;code&gt;stroke-dasharray&lt;/code&gt;を使います。
+&lt;code&gt;stroke-dasharray: 破線の長さ 破線の間隔;&lt;/code&gt;
+この破線の長さをアニメーションさせる事で、くるっと回るアニメーションとなります。
+
+### 破線の間隔の値
+この時、破線の間隔の値は、円周の長さを設定する必要があり、計算によって導きます。
+円周の長さは&lt;code&gt;直径 x 3.14&lt;/code&gt;で計算します。
+今回は、&lt;code&gt;120 x 3.14 = 376.8&lt;/code&gt;なので、小数点を切り上げて&lt;code&gt;377&lt;/code&gt;としました。
+あとは、破線の長さを0から377までアニメーションさせると、くるっと1周するアニメーションとなります。
+
+``` css
+@-webkit-keyframes circle {
+  0% { stroke-dasharray: 0 377; }
+  99.9%,to { stroke-dasharray: 377 377; }
+}
+```
+
+### 1周ではなく半分のところで止めたい場合は
+半分のところで止めたい場合は、&lt;code&gt;377 / 2 = 188.5&lt;/code&gt;などを設定すると良いです。
+
+最後に、そのままだとアニメーションの開始点が90度ずれてしまうので、
+&lt;code&gt;&amp;lt;svg&amp;gt;&lt;/code&gt;に&lt;code&gt;transform: rotate(-90deg);&lt;/code&gt;を設定して、上からくるっと回るアニメーションにします。
+
+同じようなアニメーションのデモも、CodePenにあったのでメモしておきます。
+
+https://codepen.io/kyledws/pen/Gvelt/
+</p><p>page.photos</p><p></p><p>page.link</p><p></p></div><div class="wrap"><header><a href="/" class="logo-link"><div class="site-name">Otty</div></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">Blog</a></li><li class="nav-list-item"><a href="/about/" target="_self" class="nav-list-link">About</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">Archive</a></li><li class="nav-list-item"><a href="https://twitter.com/melo15" target="_blank" class="nav-list-link">Twitter</a></li><li class="nav-list-item"><a href="https://github.com/NaokiOtsu" target="_blank" class="nav-list-link">GitHub</a></li></ul></header><section class="container"><div class="sidebar"><div class="avator"><a href="https://twitter.com/melo15"><img src="/images/logo.png"></a></div><div class="name"><span>Author: </span>Naoki Otsu</div><div class="profile"><span>Job:  </span>Frontend Engineer<br>フロントエンドに関わる事をつぶやいたりブログに書いたりしています。熊本出身。バスケ(特にNBA)好きです。<a class="more" href="/about/">...more</a><br></div><a href="https://twitter.com/melo15" class="twitter-follow-button" data-show-count="false">Follow @melo15</a> <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script><div style="margin-top: 30px;"><a class="twitter-timeline" data-width="220" data-height="400" data-theme="light" href="https://twitter.com/melo15">Tweets by melo15</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></div></div><div class="post"><article class="post-block"><h1 class="post-title">SVGで円をアニメーションさせたい時のMEMO</h1><div class="post-info">2016年9月18日</div><div class="post-content"><p>ローディングバーや円グラフを表示したい時など、<br>くるっと回る円のアニメーションを作りたい時があります。</p>
 <p><img src="https://qiita-image-store.s3.amazonaws.com/0/2582/b6d35e8d-0301-57c4-e4c3-2b12ed7fafd9.png" alt="Create_a_New_Pen.png"></p>
 <p><a href="http://codepen.io/melo15/pen/yJmVEJ" target="_blank" rel="external">http://codepen.io/melo15/pen/yJmVEJ</a></p>
 <h2 id="実装方法"><a href="#実装方法" class="headerlink" title="実装方法"></a>実装方法</h2><p>下記のように実装すると良いです。</p>
