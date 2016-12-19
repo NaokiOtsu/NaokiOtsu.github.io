@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://naoki-otsu.info/"/>
-  <updated>2016-12-07T21:18:43.000Z</updated>
+  <updated>2016-12-19T20:17:05.000Z</updated>
   <id>http://naoki-otsu.info/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git checkout --ours と --theirs - コンフリした時の対処</title>
+    <link href="http://naoki-otsu.info/2016/12/20/git-checkout-ours-theirs/"/>
+    <id>http://naoki-otsu.info/2016/12/20/git-checkout-ours-theirs/</id>
+    <published>2016-12-19T20:05:47.000Z</published>
+    <updated>2016-12-19T20:17:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>gitでコンフリした時に、通常だと差分を見て手動で解決していきますが、<br>HEAD側か、マージさせた側かに全ての変更を適用したい場合もあったりして、<br>その場合は、 <code>git checkout --ours</code> もしくは <code>git checkout --theirs</code> を使うと良いのですが、<br>どちらがどちらになるのかよく忘れてしまうので備忘録です。</p>
+<p><img src="/images/git_checkout_ours_theirs.png" alt="git checkout --ours or --theirs"></p>
+<p><code>--ours</code>がHEAD側、<code>--theirs</code>がマージさせた側(自分が直前に作業した内容な事が多そうでしょうか)となるようです。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;gitでコンフリした時に、通常だと差分を見て手動で解決していきますが、&lt;br&gt;HEAD側か、マージさせた側かに全ての変更を適用したい場合もあったりして、&lt;br&gt;その場合は、 &lt;code&gt;git checkout --ours&lt;/code&gt; もしくは &lt;code&gt;git ch
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>CSSアニメーションのスマホ(iOS/Android)で起きる不具合/バグ</title>
