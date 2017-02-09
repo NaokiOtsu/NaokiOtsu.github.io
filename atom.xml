@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://naoki-otsu.info/"/>
-  <updated>2016-12-19T20:17:05.000Z</updated>
+  <updated>2017-02-09T22:44:07.000Z</updated>
   <id>http://naoki-otsu.info/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JavaScriptでCSSを取得する / getComputedStyleとparseInt,parseFloat</title>
+    <link href="http://naoki-otsu.info/2017/02/10/getcomputedstyle-parseint-css-js/"/>
+    <id>http://naoki-otsu.info/2017/02/10/getcomputedstyle-parseint-css-js/</id>
+    <published>2017-02-09T22:03:28.000Z</published>
+    <updated>2017-02-09T22:44:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="getComputedStyle"><a href="#getComputedStyle" class="headerlink" title="getComputedStyle"></a>getComputedStyle</h1><p>普段、jQueryなどを使っていたら <code>.css()</code> などを使うので、ほとんど使わないメソッドだとは思うんですが、ピュア(Vanilla)なJavaScriptでCSSのプロパティを取得したい時は、 <code>window.getComputedStyle()</code> を使うと取得できます。<br>IE9以上のモダンブラウザで使用出来ます。  </p>
+<p>例えば要素の高さを取得したい時は、  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">window.getComputedStyle(document.getElementById(&apos;target&apos;), null).height; // `30px` など</div></pre></td></tr></table></figure>
+<p>第一引数が取得したいDOM要素、第二引数は基本的にnullで <code>:before</code> 要素とかを取得したい時に <code>:before</code> などを指定すると良さそうです。  </p>
+<h1 id="parseIntとparseFloat"><a href="#parseIntとparseFloat" class="headerlink" title="parseIntとparseFloat"></a>parseIntとparseFloat</h1><p>この時、例えば <code>30px</code> など <code>px</code> が入った文字列が取得できるのですが、これを <code>30</code> など数値のみに変換したい事も出てきます。<br>自分は数値変換では <code>Number()</code> を使う事が多いんですが、 <code>Number()</code> だと数値に変換出来ない文字列があった場合は <code>NaN</code> を返してしまうので、この場合は使えません。  </p>
+<p>正規表現でやるのかなと思いましたがそんな事はなく、 <code>parseInt()</code> や <code>parseFloat()</code> を使うと柔軟に対応してくれそうです。<br> <code>parseInt()</code> は整数だけを解析、 <code>parseFloat()</code> は整数と浮動小数点の両方を解析してくれて、両方とも文字列の前の空白や最後の数値変換出来ない文字列は無視してくれます。</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">parseInt(&apos;30px&apos;, 10); // 30</div></pre></td></tr></table></figure>
+<p>無事に数値のみ取得できました。<br>良くわかってなかった部分の備忘録でした。  </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;getComputedStyle&quot;&gt;&lt;a href=&quot;#getComputedStyle&quot; class=&quot;headerlink&quot; title=&quot;getComputedStyle&quot;&gt;&lt;/a&gt;getComputedStyle&lt;/h1&gt;&lt;p&gt;普段、jQueryなどを使っ
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>git checkout --ours と --theirs - コンフリした時の対処</title>
