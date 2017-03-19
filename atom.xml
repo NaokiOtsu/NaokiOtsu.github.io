@@ -45,16 +45,16 @@
   </entry>
   
   <entry>
-    <title>webpack + AutoPrefixerでFlexboxがAndroid4系端末で効かなかった時のメモ</title>
+    <title>webpack + AutoPrefixerで、&quot;display:-webkit-flex;&quot;が消えてしまう問題</title>
     <link href="http://naoki-otsu.info/2017/03/13/webpack-autoprefixer-setting/"/>
     <id>http://naoki-otsu.info/2017/03/13/webpack-autoprefixer-setting/</id>
     <published>2017-03-12T20:29:33.000Z</published>
-    <updated>2017-03-19T10:28:40.000Z</updated>
+    <updated>2017-03-19T10:31:46.000Z</updated>
     
     <content type="html"><![CDATA[<p>とある案件で、webpack + AutoPrefixerを使ってて、<br>CSSの出力結果から <code>display: -webkit-flex;</code> とかが何故か抜けててしまってて、<br>Android4系とかの一部端末で横並びが効いてない事があったので、その時の実装メモ。</p>
 <p><a href="https://github.com/postcss/autoprefixer#no-prefixes-in-production" target="_blank" rel="external">AutoPrefixerのドキュメント</a>に記載がありましたが、<br>原因は、webpackとかのツールにもAutoPrefixerが含まれていて、<br>そのツールを使ってAutoPrefixerを使うとそのツールの<br>デフォルトのブラウザリストを使うので、<br>結果的にプレフィックスを削除するよ、的な事のようでした。    </p>
 <p>AutoPrefixerのブラウザリストの設定は、<br><code>browserslist</code> のファイルをルートに置くか、<br>package.jsonのkeyに <code>browserslist</code> を設定する事が推奨されているようなので、<br>package.jsonに設定を移す事で無事に解決できました。  </p>
-<p>webpack2 + ReactでCSSモジュール構築した時も同じ問題に直面したりして、<br>webpack.config.jsやgulpfile.jsなどに記載していたAutoPrefixerのBrowserlistを、<br><a href="(https://github.com/NaokiOtsu/Tips/blob/master/React/ReactCSSModule/package.json#L26-L30">このpackage.json</a>)のように記載すれば <code>display: -webkit-flex;</code> が消えちゃう問題も解消されるはずです。  </p>
+<p>webpack2 + ReactでCSSモジュール構築した時も同じ問題に直面したりして、<br>webpack.config.jsやgulpfile.jsなどに記載していたAutoPrefixerのBrowserlistを、<br><a href="(https://github.com/NaokiOtsu/Tips/blob/master/React/ReactCSSModule/package.json">このpackage.json</a>のように記載すれば <code>display: -webkit-flex;</code> が消えちゃう問題も解消されるはずです。  </p>
 ]]></content>
     
     <summary type="html">
