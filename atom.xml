@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://naoki-otsu.info/"/>
-  <updated>2017-03-13T22:57:48.000Z</updated>
+  <updated>2017-03-19T10:08:51.000Z</updated>
   <id>http://naoki-otsu.info/</id>
   
   <author>
@@ -16,21 +16,50 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>webpack + AutoPrefixerでFlexboxが一部端末で効かなかった時の設定メモ</title>
-    <link href="http://naoki-otsu.info/2017/03/13/webpack-autoprefixer-setting/"/>
-    <id>http://naoki-otsu.info/2017/03/13/webpack-autoprefixer-setting/</id>
-    <published>2017-03-12T20:29:33.000Z</published>
-    <updated>2017-03-13T22:57:48.000Z</updated>
+    <title>AndroidアプリのWebViewでスクロールが重たい問題の改善</title>
+    <link href="http://naoki-otsu.info/2017/03/15/android-webview-scroll-heavy/"/>
+    <id>http://naoki-otsu.info/2017/03/15/android-webview-scroll-heavy/</id>
+    <published>2017-03-14T20:06:26.000Z</published>
+    <updated>2017-03-19T10:08:51.000Z</updated>
     
-    <content type="html"><![CDATA[<p>実案件で、webpack + AutoPrefixerを使ってて、CSSの出力結果から <code>display: -webkit-flex;</code> とかが何故か抜けててしまってて、Android4系とか一部端末で横並びが効いてない事があったので、その時の実装メモ。</p>
-<p>原因は、webpackとかのツールにもAutoPrefixerが含まれていて、そのツールを使ってAutoPrefixerを使うとそのツールのデフォルトのブラウザリストを使うので、結果的にプレフィックスを削除するよ、的な事のようでした。<br><a href="https://github.com/postcss/autoprefixer#no-prefixes-in-production" target="_blank" rel="external">https://github.com/postcss/autoprefixer#no-prefixes-in-production</a></p>
-<p>AutoPrefixerのブラウザ指定の設定は、 <code>browserslist</code> のファイルをルートに置くか、package.jsonのkeyに <code>browserslist</code> を設定する事が推奨されているようなので、package.jsonに設定を移す事で無事に解決できました。  </p>
-<p>webpack2 + ReactでCSSモジュール構築した時も同じ問題に直面したので、package.jsonに移して解決した時のソースを残しておきます。<br><a href="https://github.com/NaokiOtsu/Tips/tree/master/React/ReactCSSModule" target="_blank" rel="external">https://github.com/NaokiOtsu/Tips/tree/master/React/ReactCSSModule</a></p>
+    <content type="html"><![CDATA[<p>とあるAndroidアプリ案件でWebViewのスクロールが重たい報告があがってきました。  </p>
+<p>スクロールしようとしてもAndroidはスムーズにいかず、反応が鈍い感じ..iOSは何も問題なし。</p>
+<p>JavaScriptもそれなりに入っているページだったので、<br>最初はJavaScriptのリファクタリングを頑張ってましたが、<br>頑張ってはみたもののそこまでの改善は見られず..</p>
+<p>また大きい画像もあったのでレンダリング処理に時間かかってるのかなという事で、<br>最適な画像を準備するようにしても、あまり変わらず..</p>
+<p>困り果てて調べていたところ、CSSの可能性が。  </p>
+<p><a href="https://havelog.ayumusato.com/develop/performance/e569-frontend_performance_memo.html" target="_blank" rel="external">フロントエンドチューニングの箇条殴り書き ::ハブろぐ</a>  </p>
+<p><a href="http://www.yoheim.net/blog.php?q=20130713" target="_blank" rel="external">[CSS] border-radiusとbox-shadowを組み合わせると、それぞれ単体でのスタイルより５倍重たい！？</a></p>
+<p><code>border-radius</code> と <code>box-shadow</code> の組み合わせ。<br>どうも今回のケースはこれが原因のようでした。<br><code>box-shadow</code> を無くしたり、<code>border-radius</code>を角丸の画像(懐かしいやり方)に変えたりしたところ、かなり改善されました。  </p>
+<p>これらのCSS3系プロパティが重たいというのは聞いてはいたが、ここまでとは。<br>特に <code>border-radius</code> と <code>box-shadow</code> の組み合わせは、よくありそうなケースなので注意が必要ですね。<br>大変勉強になりました。  </p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;実案件で、webpack + AutoPrefixerを使ってて、CSSの出力結果から &lt;code&gt;display: -webkit-flex;&lt;/code&gt; とかが何故か抜けててしまってて、Android4系とか一部端末で横並びが効いてない事があったので、その時の実装メモ
+      &lt;p&gt;とあるAndroidアプリ案件でWebViewのスクロールが重たい報告があがってきました。  &lt;/p&gt;
+&lt;p&gt;スクロールしようとしてもAndroidはスムーズにいかず、反応が鈍い感じ..iOSは何も問題なし。&lt;/p&gt;
+&lt;p&gt;JavaScriptもそれなりに入っているページだ
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>webpack + AutoPrefixerでFlexboxがAndroid一部端末で効かなかった時のメモ</title>
+    <link href="http://naoki-otsu.info/2017/03/13/webpack-autoprefixer-setting/"/>
+    <id>http://naoki-otsu.info/2017/03/13/webpack-autoprefixer-setting/</id>
+    <published>2017-03-12T20:29:33.000Z</published>
+    <updated>2017-03-19T10:14:07.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>とある案件で、webpack + AutoPrefixerを使ってて、<br>CSSの出力結果から <code>display: -webkit-flex;</code> とかが何故か抜けててしまってて、<br>Android4系とかの一部端末で横並びが効いてない事があったので、その時の実装メモ。</p>
+<p><a href="https://github.com/postcss/autoprefixer" target="_blank" rel="external">AutoPrefixerのドキュメント</a>に記載がありましたが、<br>原因は、webpackとかのツールにもAutoPrefixerが含まれていて、<br>そのツールを使ってAutoPrefixerを使うとそのツールの<br>デフォルトのブラウザリストを使うので、<br>結果的にプレフィックスを削除するよ、的な事のようでした。<br><a href="https://github.com/postcss/autoprefixer#no-prefixes-in-production" target="_blank" rel="external">https://github.com/postcss/autoprefixer#no-prefixes-in-production</a></p>
+<p>AutoPrefixerのブラウザ指定の設定は、<br><code>browserslist</code> のファイルをルートに置くか、<br>package.jsonのkeyに <code>browserslist</code> を設定する事が推奨されているようなので、<br>package.jsonに設定を移す事で無事に解決できました。  </p>
+<p>webpack2 + ReactでCSSモジュール構築した時も同じ問題に直面したので、<br>package.jsonに移して解決した時のソースを残しておこうと思います。<br><a href="https://github.com/NaokiOtsu/Tips/tree/master/React/ReactCSSModule" target="_blank" rel="external">https://github.com/NaokiOtsu/Tips/tree/master/React/ReactCSSModule</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;とある案件で、webpack + AutoPrefixerを使ってて、&lt;br&gt;CSSの出力結果から &lt;code&gt;display: -webkit-flex;&lt;/code&gt; とかが何故か抜けててしまってて、&lt;br&gt;Android4系とかの一部端末で横並びが効いてない事があった
     
     </summary>
     
@@ -577,35 +606,6 @@
     
     
       <category term="browsersync" scheme="http://naoki-otsu.info/tags/browsersync/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>あるボタンを押した時のアニメーション効果を連打しても確実に付けさせたい</title>
-    <link href="http://naoki-otsu.info/2016/09/03/button-click-animation/"/>
-    <id>http://naoki-otsu.info/2016/09/03/button-click-animation/</id>
-    <published>2016-09-03T12:05:17.000Z</published>
-    <updated>2016-12-07T21:22:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>あるボタンを押した時に、<br>ぽよんと反応するようなアニメーション効果を与えたい時があります。<br>その要素を押したら、例えば <code>.click-animation</code>のような、ぽよんとするCSSアニメーションを付けたクラスを、付与させる事が多いのですが、そんな時の実装MEMOを残しておこうと思います。  </p>
-<h2 id="従来の方法"><a href="#従来の方法" class="headerlink" title="従来の方法"></a>従来の方法</h2><p>要素を押した時に、<code>.click-animation</code>が既に付与されていたら、<br>削除してから付与しないとアニメーションしなく、<br>また削除して即付与してもアニメーションしないので、<br><code>setTimeout()</code>などで適当な一定時間待って付与する事が多かったです。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(target).removeClass(<span class="string">'click-animation'</span>);</div><div class="line">setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(target).addClass(<span class="string">'click-animation'</span>);</div><div class="line">&#125;, <span class="number">10</span>);</div></pre></td></tr></table></figure>
-<p>もしくは、<code>webkitAnimationEnd</code>などを使って、アニメーション後にクラス削除などしていました。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(target).addClass(<span class="string">'click-animation'</span>);</div><div class="line">$(target).on(<span class="string">'webkitAnimationEnd'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(target).removeClass(<span class="string">'click-animation'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>ただこれだと連打した場合に反応してくれない場合があります。</p>
-<h2 id="実装方法"><a href="#実装方法" class="headerlink" title="実装方法"></a>実装方法</h2><p><code>requestAnimationFrame</code>を使うと良さそうです。<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$(target).removeClass(<span class="string">'click-animation'</span>);</div><div class="line">requestAnimationFrame(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    $(target).addClass(<span class="string">'click-animation'</span>);</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
-<p>これだと高橋名人ばりに連打した場合も確実にアニメーション効果を与える事ができました。<br>ブラウザの次のレンダリングフレームを待ってクラス付与してるから確実ということでしょうか。</p>
-<p>Google I/O 2016の<a href="https://github.com/GoogleChrome/ui-element-samples/blob/gh-pages/swipeable-cards/cards.js#L166-L175" target="_blank" rel="external">実装サンプル</a>でも、<code>requestAnimationFrame</code>を使った要素の付与や削除をやってるようでした。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;あるボタンを押した時に、&lt;br&gt;ぽよんと反応するようなアニメーション効果を与えたい時があります。&lt;br&gt;その要素を押したら、例えば &lt;code&gt;.click-animation&lt;/code&gt;のような、ぽよんとするCSSアニメーションを付けたクラスを、付与させる事が多いのです
-    
-    </summary>
-    
-    
-      <category term="js" scheme="http://naoki-otsu.info/tags/js/"/>
     
   </entry>
   
