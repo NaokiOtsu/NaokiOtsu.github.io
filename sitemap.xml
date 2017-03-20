@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://naoki-otsu.info/about/index.html</loc>
+    
+    <lastmod>2017-03-20T06:55:23.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://naoki-otsu.info/2017/03/13/webpack-autoprefixer-setting/</loc>
     
     <lastmod>2017-03-20T06:44:16.000Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>http://naoki-otsu.info/2017/03/15/android-webview-scroll-heavy/</loc>
     
     <lastmod>2017-03-20T06:40:37.000Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://naoki-otsu.info/about/index.html</loc>
-    
-    <lastmod>2017-03-13T22:59:13.000Z</lastmod>
     
   </url>
   
