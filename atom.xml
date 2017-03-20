@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://naoki-otsu.info/"/>
-  <updated>2017-03-19T12:00:36.000Z</updated>
+  <updated>2017-03-20T06:40:37.000Z</updated>
   <id>http://naoki-otsu.info/</id>
   
   <author>
@@ -20,24 +20,23 @@
     <link href="http://naoki-otsu.info/2017/03/15/android-webview-scroll-heavy/"/>
     <id>http://naoki-otsu.info/2017/03/15/android-webview-scroll-heavy/</id>
     <published>2017-03-14T20:06:26.000Z</published>
-    <updated>2017-03-19T12:00:36.000Z</updated>
+    <updated>2017-03-20T06:40:37.000Z</updated>
     
     <content type="html"><![CDATA[<p>とあるAndroidアプリ案件でWebViewのスクロールが重たい報告があがってきました。  </p>
-<p>スクロールしようとしてもAndroidはスムーズにいかず、反応が鈍い感じ..iOSは何も問題なし。</p>
+<p>スクロールしようとしてもAndroidはスムーズにいかず、反応が鈍い感じ..<br>同じ端末のデフォルトブラウザ(Web)やiOSは特に問題なしで、AndroidのWebViewのみ顕著に重たい状況でした。  </p>
 <p>JavaScriptもそれなりに入っているページだったので、<br>最初はJavaScriptのリファクタリングを頑張ってましたが、<br>頑張ってはみたもののそこまでの改善は見られず..</p>
 <p>また大きい画像もあったのでレンダリング処理に時間かかってるのかなという事で、<br>最適な画像を準備するようにしても、あまり変わらず..</p>
 <p>困り果てて調べていたところ、CSSの可能性が。  </p>
 <p><a href="https://havelog.ayumusato.com/develop/performance/e569-frontend_performance_memo.html" target="_blank" rel="external">フロントエンドチューニングの箇条殴り書き ::ハブろぐ</a>  </p>
 <p><a href="http://www.yoheim.net/blog.php?q=20130713" target="_blank" rel="external">[CSS] border-radiusとbox-shadowを組み合わせると、それぞれ単体でのスタイルより５倍重たい！？</a></p>
 <p><code>border-radius</code> と <code>box-shadow</code> の組み合わせ。<br>どうも今回のケースはこれが原因のようでした。<br><code>box-shadow</code> を無くしたり、<code>border-radius</code>を角丸の画像(懐かしいやり方)に変えたりしたところ、かなり改善されました。  </p>
-<p>これらのCSS3系プロパティが重たいというのは聞いてはいたが、ここまでとは。<br>特に <code>border-radius</code> と <code>box-shadow</code> の組み合わせは、よくありそうなケースなので注意が必要ですね。<br>大変勉強になりました。  </p>
+<p>これらのCSS3系プロパティが重たいというのは聞いてはいたが、ここまでとは。<br>特に <code>border-radius</code> と <code>box-shadow</code> の組み合わせは、よくありそうなケースなので注意が必要ですね。<br>勉強になりました。  </p>
 ]]></content>
     
     <summary type="html">
     
       &lt;p&gt;とあるAndroidアプリ案件でWebViewのスクロールが重たい報告があがってきました。  &lt;/p&gt;
-&lt;p&gt;スクロールしようとしてもAndroidはスムーズにいかず、反応が鈍い感じ..iOSは何も問題なし。&lt;/p&gt;
-&lt;p&gt;JavaScriptもそれなりに入っているページだ
+&lt;p&gt;スクロールしようとしてもAndroidはスムーズにいかず、反応が鈍い感じ..&lt;br&gt;同じ端末のデフォルトブラウザ(Web)やiOSは特に問題なしで、Androidの
     
     </summary>
     
@@ -49,12 +48,12 @@
     <link href="http://naoki-otsu.info/2017/03/13/webpack-autoprefixer-setting/"/>
     <id>http://naoki-otsu.info/2017/03/13/webpack-autoprefixer-setting/</id>
     <published>2017-03-12T20:29:33.000Z</published>
-    <updated>2017-03-19T10:33:52.000Z</updated>
+    <updated>2017-03-20T06:42:10.000Z</updated>
     
     <content type="html"><![CDATA[<p>とある案件で、webpack + AutoPrefixerを使ってて、<br>CSSの出力結果から <code>display: -webkit-flex;</code> とかが何故か抜けててしまってて、<br>Android4系とかの一部端末で横並びが効いてない事があったので、その時の実装メモ。</p>
 <p><a href="https://github.com/postcss/autoprefixer#no-prefixes-in-production" target="_blank" rel="external">AutoPrefixerのドキュメント</a>に記載がありましたが、<br>原因は、webpackとかのツールにもAutoPrefixerが含まれていて、<br>そのツールを使ってAutoPrefixerを使うとそのツールの<br>デフォルトのブラウザリストを使うので、<br>結果的にプレフィックスを削除するよ、的な事のようでした。    </p>
 <p>AutoPrefixerのブラウザリストの設定は、<br><code>browserslist</code> のファイルをルートに置くか、<br>package.jsonのkeyに <code>browserslist</code> を設定する事が推奨されているようなので、<br>package.jsonに設定を移す事で無事に解決できました。  </p>
-<p>webpack2 + ReactでCSSモジュール構築した時も同じ問題に直面したりして、<br>webpack.config.jsやgulpfile.jsなどに記載していたAutoPrefixerのBrowserlistを、<br><a href="https://github.com/NaokiOtsu/Tips/blob/master/React/ReactCSSModule/package.json#L26-L30" target="_blank" rel="external">こちらの</a>package.jsonのように記載すれば <code>display: -webkit-flex;</code> が消えちゃう問題も解消されるはずです。  </p>
+<p>webpack2 + ReactでCSSモジュールを構築した時も同じ問題に直面したりして、<br>webpack.config.jsやgulpfile.jsなどに記載していたAutoPrefixerのBrowserlistを、<br>こちらの<a href="https://github.com/NaokiOtsu/Tips/blob/master/React/ReactCSSModule/package.json#L26-L30" target="_blank" rel="external">package.json</a>のように記載して解消されました。  </p>
 ]]></content>
     
     <summary type="html">
