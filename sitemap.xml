@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://naoki-otsu.info/2017/04/30/flexbox-inline-element/</loc>
+    
+    <lastmod>2017-04-29T21:50:54.000Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://naoki-otsu.info/2016/09/18/live-reload-browser-sync/</loc>
     
     <lastmod>2017-04-14T21:35:29.000Z</lastmod>
@@ -51,14 +58,14 @@
   </url>
   
   <url>
-    <loc>http://naoki-otsu.info/2016/11/13/youtube-play-list-youtube-data-api-v3/</loc>
+    <loc>http://naoki-otsu.info/2016/09/24/javascript-replace-child-clone-node/</loc>
     
     <lastmod>2016-12-08T14:26:56.000Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://naoki-otsu.info/2016/09/24/javascript-replace-child-clone-node/</loc>
+    <loc>http://naoki-otsu.info/2016/11/13/youtube-play-list-youtube-data-api-v3/</loc>
     
     <lastmod>2016-12-08T14:26:56.000Z</lastmod>
     
