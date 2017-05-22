@@ -1,9 +1,2 @@
 .DS_Store
-psd
 node_modules
-package.json
-webpack.config.js
-yarn.lock
-src
-.babelrc
-postcss.config.js
